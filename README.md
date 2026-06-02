@@ -50,6 +50,7 @@ product-design                  general atomic decisions for any SaaS UI
 financial-ui-patterns           finance-specific correctness (mandatory)
 financial-ui-personas           pick exactly one visual aesthetic
 ```
+<img width="1113" height="645" alt="Screenshot 2026-06-02 at 10 48 12 AM" src="https://github.com/user-attachments/assets/b28875c1-1d18-45bc-9720-c029bc8b9224" />
 
 Use the patterns layer always. Pick one persona per product.
 
@@ -68,6 +69,8 @@ Without the skill, agents shipping financial UI typically produce:
 
 The two skills capture the specific patterns Bloomberg, Kraken, TradingView, Coinbase, FT, Robinhood, and others actually ship.
 
+<img width="1117" height="525" alt="Screenshot 2026-06-02 at 10 48 17 AM" src="https://github.com/user-attachments/assets/cb7e450b-68f9-4269-a20b-26e3ce890206" />
+
 ## Install
 
 ```bash
@@ -79,6 +82,8 @@ claude plugin marketplace add /path/to/financial-ui-suite
 ```
 
 Once installed, the skills auto-load when Claude detects financial UI work — anything with prices, P&L, order books, tickers, holdings, charts, or streaming market data.
+
+<img width="1135" height="566" alt="Screenshot 2026-06-02 at 10 48 24 AM" src="https://github.com/user-attachments/assets/92c2d543-f177-4944-839c-8e9ac2caa09f" />
 
 ## Usage
 
