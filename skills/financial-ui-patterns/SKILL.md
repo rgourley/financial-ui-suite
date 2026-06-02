@@ -52,7 +52,9 @@ This skill codifies the patterns that production trading UIs (Kraken, Coinbase, 
 | `references/components.md` | Building tables, order books, tickers, charts |
 | `references/streaming-and-state.md` | Live data, WebSocket UIs, tick-flash, staleness |
 | `references/accessibility.md` | Any production UI (always) |
+| `references/mobile-and-responsive.md` | Targeting phones/tablets, responsive tables, bottom sheets, touch interactions |
 | `references/industry-patterns.md` | Want specific references from Kraken/Coinbase/TradingView/Bloomberg |
+| `references/charts-and-candles.md` | Building any chart (candles, OHLC, line, volume, indicators) |
 
 ## Core Pattern: Numbers
 

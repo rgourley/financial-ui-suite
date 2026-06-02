@@ -20,6 +20,7 @@ skills/
 │       ├── components.md               Tables, order books, tickers, pills
 │       ├── streaming-and-state.md      WebSocket lifecycle, tick flash, throttling
 │       ├── accessibility.md            Color blindness, keyboard, screen readers
+│       ├── mobile-and-responsive.md    Phone/tablet patterns, bottom sheets, touch
 │       ├── industry-patterns.md        Conventions from Bloomberg, Kraken, etc.
 │       └── charts-and-candles.md       OHLC structure, volume, indicators (base)
 └── financial-ui-personas/         Aesthetic layer (pick one)
@@ -90,6 +91,7 @@ Both skills built using TDD-for-documentation discipline (see `superpowers:writi
 
 ## Status
 
+- Version 0.3.0 — adds dedicated mobile/responsive reference (responsive tables, bottom sheets, touch chart interaction, mobile order entry, safe areas, gestures)
 - Version 0.2.0 — all 10 personas fully fleshed out
 - Each persona ships with complete CSS variable token set (dark + light), typography table, density numbers, visual rules, persona-specific patterns, anti-patterns, example component code, reference URLs, and per-persona verification checklist
 - Cross-persona chart treatments documented in `references/charts-and-indicators.md`
