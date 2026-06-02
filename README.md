@@ -84,10 +84,13 @@ Both skills built using TDD-for-documentation discipline (see `superpowers:writi
 
 ## Status
 
-- Version 0.1.0 — initial release
-- 4 personas fully fleshed out (Modern Pro Dark, Editorial Financial, API Dashboard, Retail Polish Dark)
-- 6 personas as stubs with reference URLs (Pro Terminal, Tasty Pro, Crypto Exchange, Retail Polish Light, DeFi Native, Apple Native)
-- Stubs include enough detail for first-pass implementation; deep-fill when needed
+- Version 0.2.0 — all 10 personas fully fleshed out
+- Each persona ships with complete CSS variable token set (dark + light), typography table, density numbers, visual rules, persona-specific patterns, anti-patterns, example component code, reference URLs, and per-persona verification checklist
+- Cross-persona chart treatments documented in `references/charts-and-indicators.md`
+
+## Trademark notice
+
+Brand and product names referenced throughout this project (Bloomberg, TradingView, Kraken, Coinbase, Binance, Robinhood, Public, Financial Times, Wise, Revolut, Cash App, Polygon, Stripe, Vercel, Linear, TastyTrade, Uniswap, Apple, and others) are used for illustrative, descriptive, and educational purposes only — to ground each persona in a concrete reference. This project is not affiliated with, endorsed by, sponsored by, or in any way officially connected to any of those companies. All trademarks, service marks, and trade names are the property of their respective owners.
 
 ## License
 
