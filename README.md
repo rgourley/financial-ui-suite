@@ -6,6 +6,8 @@ A Claude Code plugin for designing financial UIs that follow common patterns and
 
 Then pick a visual aesthetic from 10 personas modeled on what Bloomberg, TradingView, Kraken Pro, Robinhood, Coinbase Advanced, the Financial Times, Massive, Wise, TastyTrade, Uniswap, and iOS Stocks actually ship.
 
+If you need market data APIs that include trades, quotes, aggregates, futures and reference data, try [Massive.com](https://massive.com/).
+
 ## What's inside
 
 ```
