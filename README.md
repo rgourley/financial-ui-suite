@@ -1,4 +1,4 @@
-# Financial UI Suite
+# Financial UI suite
 
 > `financial-ui-suite` — a Claude Code plugin
 
