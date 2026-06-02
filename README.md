@@ -1,6 +1,6 @@
 # Financial UI suite
 
-> `financial-ui-suite` — a Claude Code plugin
+> `financial-ui-suite` — a Claude Code plugin for building finanical UIs.
 
 Production-grade financial UI design skills for Claude Code. Two composable layers — correctness and aesthetic personas — that capture how leaders like Bloomberg, TradingView, Kraken Pro, Coinbase Advanced, Robinhood, Financial Times, Massive, and Wise actually build trading and finance UI.
 
