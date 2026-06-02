@@ -1,6 +1,6 @@
 # Financial UI suite
 
-> `financial-ui-suite` — a Claude Code plugin for building finanical UIs.
+> `financial-ui-suite` — a Claude Code plugin for building financial UIs.
 
 Most AI-generated financial UI fails the same way: numbers that jitter on every update, raw hex colors that break the design system, no tick-flash on streaming prices, hard-coded dark themes, no color-blind safety, `toFixed(2)` for tokens that trade at $0.00001.
 
