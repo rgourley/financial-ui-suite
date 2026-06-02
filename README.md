@@ -2,7 +2,7 @@
 
 > `financial-ui-suite` — a Claude Code plugin for building financial UIs.
 
-A Claude Code plugin for designing financial UIs that follow the patterns and rules the industry has refined over decades: tabular numbers, semantic color tokens, tick-flash on streaming prices, decimal alignment, streaming-state indicators, color-blind safety, magnitude-aware decimal precision, accessible status pills, and the rest of the conventions every serious trading product ships.
+A Claude Code plugin for designing financial UIs that follow common patterns and rules; tabular numbers, semantic color tokens, tick-flash on streaming prices, decimal alignment, streaming-state indicators, color-blind safety, magnitude-aware decimal precision, accessible status pills, and the rest of the conventions every serious trading product ships.
 
 Then pick a visual aesthetic from 10 personas modeled on what Bloomberg, TradingView, Kraken Pro, Robinhood, Coinbase Advanced, the Financial Times, Massive, Wise, TastyTrade, Uniswap, and iOS Stocks actually ship.
 
