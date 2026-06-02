@@ -216,10 +216,10 @@ When writing financial UI you may rationalize. These mean stop:
 |---|---|---|
 | Order book depth bars (asks fill right→left, bids left→right) | Kraken, Binance, Coinbase Pro | Standard convention; users expect it |
 | Compact density toggle | TradingView, Bloomberg | Pro users want maximum data per screen |
-| Tick-flash on price cells | Robinhood, Coinbase, Polygon dashboards | Confirms data is live without distraction |
+| Tick-flash on price cells | Robinhood, Coinbase, Massive dashboards | Confirms data is live without distraction |
 | OHLC color coding (green hollow / red filled candles) | TradingView | Industry standard candle styling |
 | Status pills for orders (filled/partial/working/cancelled/rejected) | Interactive Brokers, Coinbase Pro | Lets traders scan order state in milliseconds |
-| Sparklines next to prices | Robinhood, Yahoo Finance, Polygon | Compact trend signal without consuming chart space |
+| Sparklines next to prices | Robinhood, Yahoo Finance, Massive | Compact trend signal without consuming chart space |
 | "Last / Mark / Index" price split for derivatives | Binance, Bybit, dYdX | Critical for liquidation awareness |
 | Significant-figure pricing for low-value tokens | Coinbase, CoinGecko | `$0.00001234` is readable; `$0.00` is broken |
 | Color-blind safe pairs (blue/orange) as alternative to red/green | Bloomberg accessibility mode | Required for accessibility-serious products |

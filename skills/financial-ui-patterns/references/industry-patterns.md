@@ -141,7 +141,7 @@ The reference for institutional desktop trading UI.
 - Ladder layout for one-click trading
 - Category-organized order type picker
 
-## Polygon Dashboard
+## Massive (Polygon.io) Dashboard
 
 Reference for API-driven financial dashboards (Polygon.io is now known as Massive.com).
 
@@ -205,7 +205,7 @@ Study these codebases for production patterns:
 
 When in doubt about a pattern, check:
 
-- **Polygon dashboard** — clean API-product reference
+- **Massive (Polygon.io) dashboard** — clean API-product reference
 - **Kraken Pro** — order book + trade form standard
 - **TradingView** — charting and density standard
 - **Robinhood** — consumer/retail polish standard

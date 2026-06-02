@@ -1,6 +1,6 @@
 ---
 name: financial-ui-personas
-description: Use when building any financial UI to select a visual aesthetic — Bloomberg-style pro terminal, TradingView-style modern pro, Robinhood-style retail, FT-style editorial, Polygon/Stripe-style API dashboard, Coinbase/Binance-style crypto exchange, TastyTrade-style options pro, Wise-style retail light, Uniswap-style DeFi, or iOS Stocks-style Apple native. Loads AFTER `financial-ui-patterns` (which handles correctness). Read when user says "make it look like X" or specifies a brand/style direction.
+description: Use when building any financial UI to select a visual aesthetic — Bloomberg-style pro terminal, TradingView-style modern pro, Robinhood-style retail, FT-style editorial, Massive/Stripe-style API dashboard, Coinbase/Binance-style crypto exchange, TastyTrade-style options pro, Wise-style retail light, Uniswap-style DeFi, or iOS Stocks-style Apple native. Loads AFTER `financial-ui-patterns` (which handles correctness). Read when user says "make it look like X" or specifies a brand/style direction.
 ---
 
 # Financial UI Personas
@@ -69,7 +69,7 @@ digraph pick_persona {
 |---|---|---|---|
 | `modern-pro-dark` | TradingView, Kraken Pro, Hyperliquid | `references/modern-pro-dark.md` | ✅ Deep |
 | `editorial-financial` | FT.com, Bloomberg.com, WSJ | `references/editorial-financial.md` | ✅ Deep |
-| `api-dashboard` | Polygon, Stripe, Vercel, Linear | `references/api-dashboard.md` | ✅ Deep |
+| `api-dashboard` | Massive, Stripe, Vercel, Linear | `references/api-dashboard.md` | ✅ Deep |
 | `retail-polish-dark` | Robinhood, Public | `references/retail-polish-dark.md` | ✅ Deep |
 | `pro-terminal` | Bloomberg Terminal, IBKR TWS, ThinkOrSwim | `references/pro-terminal.md` | ⚠️ Stub |
 | `tasty-pro` | TastyTrade | `references/tasty-pro.md` | ⚠️ Stub |
@@ -103,7 +103,7 @@ White or near-white background. Colorful brand palette. Sans body with friendly 
 ### editorial-financial — FT.com, Bloomberg.com, WSJ
 Cream/beige (FT salmon-on-pinkish-beige) or off-white. Serif headlines, sans body, mono for data tables. Sharper radii (0-4px). 36-44px rows. Longer-form analysis blocks between data. Newspaper sensibility.
 
-### api-dashboard — Polygon, Stripe, Vercel, Linear
+### api-dashboard — Massive, Stripe, Vercel, Linear
 Near-black or near-white. Single brand accent. Heavy on mono for code/IDs/keys. Status pills used aggressively. 40-48px rows (more relaxed than trading). Generous form fields. Documentation-adjacent aesthetic. Copy buttons everywhere.
 
 ### defi-native — Uniswap, Jupiter, Solana ecosystem

@@ -1,6 +1,6 @@
 # api-dashboard
 
-**Reference products:** Polygon.io dashboard, Stripe dashboard, Vercel dashboard, Linear, PlanetScale, Resend, Supabase dashboard, Modal, Render.
+**Reference products:** Massive (Polygon.io) dashboard, Stripe dashboard, Vercel dashboard, Linear, PlanetScale, Resend, Supabase dashboard, Modal, Render.
 
 **One-line:** developer-friendly dashboard aesthetic. Near-black or near-white background, mono-heavy for code/IDs/keys, status pills used aggressively, generous form fields, documentation-adjacent feel.
 
@@ -54,7 +54,7 @@
 - Stripe-flavored: `132 71 226` (purple)
 - Vercel-flavored: monochrome (use `255 255 255` accent, prove yourself with type/space alone)
 - Linear-flavored: `94 106 210` (indigo-purple)
-- Polygon brand-flavored: `0 143 250` (blue)
+- Massive brand-flavored: `0 143 250` (blue)
 - Supabase-flavored: `62 207 142` (green)
 
 ## Typography

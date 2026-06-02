@@ -11,7 +11,7 @@
 // - Geist + JetBrains Mono (used by Vercel, Linear)
 // - Inter + JetBrains Mono (used by many SaaS)
 // - SF Pro + SF Mono (Apple, macOS)
-// - IBM Plex Sans + IBM Plex Mono (IBM, Polygon)
+// - IBM Plex Sans + IBM Plex Mono (IBM, Massive)
 // - Roboto + Roboto Mono (Material, older Google Finance)
 
 fontFamily: {
@@ -153,7 +153,7 @@ More layers and the interface looks like a cake.
 
 ### Light theme is mandatory
 
-Bloomberg Terminal, Interactive Brokers, TradingView, and Polygon Dashboard all ship light themes. Pros often prefer light during the day. Building dark-only signals retail-app aesthetic.
+Bloomberg Terminal, Interactive Brokers, TradingView, and Massive all ship light themes. Pros often prefer light during the day. Building dark-only signals retail-app aesthetic.
 
 Use CSS variables from day one. Add `[data-theme="light"]` overrides. Test every screen in both.
 

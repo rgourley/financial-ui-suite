@@ -1,6 +1,6 @@
 # modern-pro-dark
 
-**Reference products:** TradingView, Kraken Pro, Hyperliquid, dYdX v4, Polygon dashboard (the older dark variant), Linear (adjacent aesthetic).
+**Reference products:** TradingView, Kraken Pro, Hyperliquid, dYdX v4, Massive (Polygon.io) dashboard (the older dark variant), Linear (adjacent aesthetic).
 
 **One-line:** dark slate with single accent, sans + tabular, 4-6px radius, hairline borders, no decoration. The default for serious pro consumer financial products.
 
@@ -156,7 +156,7 @@ Mono is **only** for tickers, IDs, addresses, code. Prices use sans + `tabular-n
 - Kraken Pro — https://pro.kraken.com (study order book, trade form, history tabs)
 - Hyperliquid — https://app.hyperliquid.xyz (perp DEX, dense pro feel)
 - dYdX v4 — https://dydx.trade (modern pro perp DEX)
-- Polygon dashboard — https://polygon.io/dashboard (older API-side variant)
+- Massive (Polygon.io) dashboard — https://polygon.io/dashboard (older API-side variant)
 
 ## Verification (Modern Pro Dark specific)
 

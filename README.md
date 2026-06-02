@@ -1,6 +1,6 @@
 # financial-ui-suite
 
-Production-grade financial UI design skills for Claude Code. Two composable layers — correctness and aesthetic personas — that capture how leaders like Bloomberg, TradingView, Kraken Pro, Coinbase Advanced, Robinhood, Financial Times, Polygon, and Wise actually build trading and finance UI.
+Production-grade financial UI design skills for Claude Code. Two composable layers — correctness and aesthetic personas — that capture how leaders like Bloomberg, TradingView, Kraken Pro, Coinbase Advanced, Robinhood, Financial Times, Massive, and Wise actually build trading and finance UI.
 
 ## What's inside
 
@@ -26,7 +26,7 @@ skills/
         ├── retail-polish-dark.md       Robinhood, Public
         ├── retail-polish-light.md      Wise, Revolut, Cash App, Monzo
         ├── editorial-financial.md      Financial Times, Bloomberg.com, WSJ
-        ├── api-dashboard.md            Polygon, Stripe, Vercel, Linear
+        ├── api-dashboard.md            Massive, Stripe, Vercel, Linear
         ├── defi-native.md              Uniswap, Jupiter, Aave, Phantom
         ├── apple-native.md             iOS Stocks, macOS Stocks widget
         └── charts-and-indicators.md    Per-persona chart treatments
@@ -46,14 +46,14 @@ Use the patterns layer always. Pick one persona per product.
 
 Without the skill, agents shipping financial UI typically produce:
 - Raw color values (`text-emerald-400`, `bg-zinc-950`) instead of semantic tokens
-- Numbers without `tabular-nums` (digits jitter on update)
+- Numbers without `tabular-nums` so digits jitter on every update
 - Hard-coded dark theme that breaks light mode
-- Broken Tailwind dynamic classes (`bg-${color}-500/10`)
-- Missing tick-flash on streaming prices
-- No staleness or connection state indicators
-- Red/green-only signals (fails for color-blind users)
-- `toFixed(2)` for all prices (breaks for BTC and SHIB simultaneously)
-- Generic AI aesthetics that look the same as every other startup
+- Broken Tailwind dynamic classes (`bg-${color}-500/10`) that the JIT silently strips
+- Streaming prices that don't flash on tick
+- WebSocket UIs with no staleness, no connection-state indicator, no reconnect strategy
+- Red/green-only signals that fail for color-blind users
+- `toFixed(2)` for every price, breaking both BTC ($100K, no decimals) and SHIB ($0.00001, eight decimals)
+- Generic AI aesthetics that look identical to every other startup dashboard
 
 The two skills capture the specific patterns Bloomberg, Kraken, TradingView, Coinbase, FT, Robinhood, and others actually ship.
 
@@ -90,7 +90,7 @@ Both skills built using TDD-for-documentation discipline (see `superpowers:writi
 
 ## Trademark notice
 
-Brand and product names referenced throughout this project (Bloomberg, TradingView, Kraken, Coinbase, Binance, Robinhood, Public, Financial Times, Wise, Revolut, Cash App, Polygon, Stripe, Vercel, Linear, TastyTrade, Uniswap, Apple, and others) are used for illustrative, descriptive, and educational purposes only — to ground each persona in a concrete reference. This project is not affiliated with, endorsed by, sponsored by, or in any way officially connected to any of those companies. All trademarks, service marks, and trade names are the property of their respective owners.
+Brand and product names referenced throughout this project (Bloomberg, TradingView, Kraken, Coinbase, Binance, Robinhood, Public, Financial Times, Wise, Revolut, Cash App, Massive, Stripe, Vercel, Linear, TastyTrade, Uniswap, Apple, and others) are used for illustrative, descriptive, and educational purposes only — to ground each persona in a concrete reference. This project is not affiliated with, endorsed by, sponsored by, or in any way officially connected to any of those companies. All trademarks, service marks, and trade names are the property of their respective owners.
 
 ## License
 

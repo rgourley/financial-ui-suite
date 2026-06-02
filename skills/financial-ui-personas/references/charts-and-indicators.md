@@ -67,7 +67,7 @@ Each persona has distinct chart conventions. Use the right chart type for the ri
 - **Indicators:** none (not technical analysis)
 - **Tooltip:** hover shows value + timestamp
 - **Time axis:** hour/day granularity, not tick-level
-- **Multi-series:** distinct brand-adjacent colors (purple primary, orange/teal secondary for Stripe; blue/green for Polygon)
+- **Multi-series:** distinct brand-adjacent colors (purple primary, orange/teal secondary for Stripe; blue/green for Massive)
 
 ### retail-polish-dark
 - **Chart:** smooth filled area chart, single accent color
