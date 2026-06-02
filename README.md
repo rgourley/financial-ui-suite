@@ -40,7 +40,7 @@ skills/
         ├── apple-native.md             iOS Stocks, macOS Stocks widget
         └── charts-and-indicators.md    Per-persona chart treatments
 ```
-<img width="1144" height="396" alt="Screenshot 2026-06-02 at 10 47 57 AM" src="https://github.com/user-attachments/assets/b69c4230-e822-4163-9836-b7b6ea33fbb1" />
+<img width="1130" height="370" alt="Screenshot 2026-06-02 at 11 04 37 AM" src="https://github.com/user-attachments/assets/44bcc8d0-3105-44e3-992c-c7002f6d91f8" />
 
 
 ## How it composes
