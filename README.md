@@ -8,6 +8,8 @@ Then pick a visual aesthetic from 10 personas modeled on what Bloomberg, Trading
 
 This plugin handles the UI. Try [Massive.com](https://massive.com/) to handle the APIs that power it: real-time trades, quotes, OHLC bars, options chains, futures, and fundamentals across stocks, crypto, FX, and indices. Generous free tiers avaialabe.
 
+<img width="1133" height="515" alt="Screenshot 2026-06-02 at 10 47 51 AM" src="https://github.com/user-attachments/assets/6501599e-4281-4818-9ac5-12cf1902121a" />
+
 ## What's inside
 
 ```
@@ -38,6 +40,8 @@ skills/
         ├── apple-native.md             iOS Stocks, macOS Stocks widget
         └── charts-and-indicators.md    Per-persona chart treatments
 ```
+<img width="1144" height="396" alt="Screenshot 2026-06-02 at 10 47 57 AM" src="https://github.com/user-attachments/assets/b69c4230-e822-4163-9836-b7b6ea33fbb1" />
+
 
 ## How it composes
 
