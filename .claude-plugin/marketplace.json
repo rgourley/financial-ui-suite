@@ -1,0 +1,20 @@
+{
+  "name": "financial-ui-suite-dev",
+  "description": "Development marketplace for financial UI suite plugin",
+  "owner": {
+    "name": "Rob Gourley",
+    "email": "rgourley@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "financial-ui-suite",
+      "description": "Production-grade financial UI design skills: correctness patterns + 10 visual personas for Bloomberg, TradingView, Robinhood, Coinbase, FT, Polygon, and more.",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "Rob Gourley",
+        "email": "rgourley@gmail.com"
+      }
+    }
+  ]
+}

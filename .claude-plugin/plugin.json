@@ -1,0 +1,24 @@
+{
+  "name": "financial-ui-suite",
+  "description": "Production-grade financial UI design skills for Claude Code. Two composable layers: financial-ui-patterns (correctness — tabular nums, semantic tokens, tick flash, accessibility, charts) and financial-ui-personas (aesthetic — 10 distinct visual systems: Bloomberg terminal, TradingView, Robinhood, Coinbase, Financial Times, Polygon/Stripe, Wise, TastyTrade, Uniswap, iOS Stocks).",
+  "version": "0.1.0",
+  "author": {
+    "name": "Rob Gourley",
+    "email": "rgourley@gmail.com"
+  },
+  "homepage": "https://github.com/rgourley/financial-ui-suite",
+  "repository": "https://github.com/rgourley/financial-ui-suite",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "financial-ui",
+    "trading",
+    "fintech",
+    "design-system",
+    "bloomberg",
+    "tradingview",
+    "robinhood",
+    "polygon",
+    "charts"
+  ]
+}
