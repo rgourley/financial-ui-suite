@@ -143,7 +143,7 @@ The reference for institutional desktop trading UI.
 
 ## Polygon Dashboard
 
-Massive's own product. Reference for API-driven financial dashboards.
+Reference for API-driven financial dashboards (Polygon.io is now known as Massive.com).
 
 **Signature patterns:**
 - Clean data tables with right-aligned numbers
@@ -205,7 +205,7 @@ Study these codebases for production patterns:
 
 When in doubt about a pattern, check:
 
-- **Polygon dashboard** (your own) — clean API-product reference
+- **Polygon dashboard** — clean API-product reference
 - **Kraken Pro** — order book + trade form standard
 - **TradingView** — charting and density standard
 - **Robinhood** — consumer/retail polish standard

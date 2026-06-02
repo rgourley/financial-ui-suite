@@ -19,16 +19,16 @@ skills/
 └── financial-ui-personas/         Aesthetic layer (pick one)
     ├── SKILL.md
     └── references/
-        ├── modern-pro-dark.md          TradingView, Kraken Pro, Hyperliquid    [DEEP]
-        ├── editorial-financial.md      FT, Bloomberg.com, WSJ                  [DEEP]
-        ├── api-dashboard.md            Polygon, Stripe, Vercel, Linear         [DEEP]
-        ├── retail-polish-dark.md       Robinhood, Public                       [DEEP]
-        ├── pro-terminal.md             Bloomberg Terminal, IBKR TWS            [stub]
-        ├── tasty-pro.md                TastyTrade                              [stub]
-        ├── crypto-exchange.md          Coinbase Advanced, Binance              [stub]
-        ├── retail-polish-light.md      Wise, Revolut, Cash App                 [stub]
-        ├── defi-native.md              Uniswap, Jupiter                        [stub]
-        ├── apple-native.md             iOS Stocks                              [stub]
+        ├── modern-pro-dark.md          TradingView, Kraken Pro, Hyperliquid
+        ├── pro-terminal.md             Bloomberg Terminal, IBKR TWS, ThinkOrSwim
+        ├── tasty-pro.md                TastyTrade
+        ├── crypto-exchange.md          Coinbase Advanced, Binance, Bybit
+        ├── retail-polish-dark.md       Robinhood, Public
+        ├── retail-polish-light.md      Wise, Revolut, Cash App, Monzo
+        ├── editorial-financial.md      Financial Times, Bloomberg.com, WSJ
+        ├── api-dashboard.md            Polygon, Stripe, Vercel, Linear
+        ├── defi-native.md              Uniswap, Jupiter, Aave, Phantom
+        ├── apple-native.md             iOS Stocks, macOS Stocks widget
         └── charts-and-indicators.md    Per-persona chart treatments
 ```
 

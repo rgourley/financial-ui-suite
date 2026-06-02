@@ -8,7 +8,7 @@
 
 ```ts
 // Recommended pairings used by leading platforms:
-// - Geist + JetBrains Mono (used by Vercel, Linear, ClawStreet)
+// - Geist + JetBrains Mono (used by Vercel, Linear)
 // - Inter + JetBrains Mono (used by many SaaS)
 // - SF Pro + SF Mono (Apple, macOS)
 // - IBM Plex Sans + IBM Plex Mono (IBM, Polygon)

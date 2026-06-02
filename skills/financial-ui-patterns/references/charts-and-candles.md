@@ -166,4 +166,4 @@ For streaming price updates on chart:
 | **TradingView Charting Library** | Full TradingView feature set | Commercial license required |
 | **Apex Charts** | General-purpose | OK for dashboards, weak for trading |
 
-For ClawStreet, Massive, AlphaWire: **TradingView Lightweight Charts** is the right default.
+For real-time price charts with candles, OHLC, and overlays: **TradingView Lightweight Charts** is the right default.

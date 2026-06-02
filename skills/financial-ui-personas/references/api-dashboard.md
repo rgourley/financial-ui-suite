@@ -197,7 +197,7 @@ API dashboards prioritize legibility over density. Devs spend hours reading docs
 - Stripe — https://dashboard.stripe.com (the gold standard; study payments table, customer detail, API logs)
 - Vercel — https://vercel.com/dashboard (monochrome aesthetic, study project list, deployments)
 - Linear — https://linear.app (issue tracker but persona-defining for dev tools)
-- Polygon.io — https://polygon.io/dashboard (the closest reference for your Massive work)
+- Polygon.io / Massive.com — https://polygon.io/dashboard (financial-API-product reference)
 - Supabase — https://supabase.com/dashboard (project + table editor patterns)
 - PlanetScale — https://app.planetscale.com (db dashboard reference)
 - Resend — https://resend.com (email API dashboard, modern reference)
