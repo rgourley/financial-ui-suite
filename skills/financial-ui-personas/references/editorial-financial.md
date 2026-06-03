@@ -9,13 +9,16 @@
 ```css
 /* LIGHT (default for editorial) */
 :root[data-theme="light"] {
-  /* Surfaces — FT's signature pinkish-beige and warm cream variants */
-  --surface:           255 247 234;    /* FT salmon-cream #FFF1E5 */
-  --surface-elevated:  255 244 227;    /* slightly warmer */
-  --surface-panel:     252 240 220;    /* nested panels */
-  --surface-hover:     248 234 213;
+  /* Surfaces — warm off-white, editorial leaning. Softer than FT's signature
+     salmon-cream (#FFF1E5) so the persona reads as generic editorial-financial
+     rather than strictly FT-identified. Swap to #FFF1E5 if you specifically
+     want FT vibes. */
+  --surface:           250 246 238;    /* #FAF6EE warm off-white */
+  --surface-elevated:  247 242 232;    /* #F7F2E8 */
+  --surface-panel:     243 238 226;    /* #F3EEE2 */
+  --surface-hover:     238 233 220;    /* #EEE9DC */
 
-  /* Text — high contrast on cream */
+  /* Text — high contrast on warm bg */
   --text-primary:   28 22 16;          /* near-black with warm hint */
   --text-secondary: 80 70 60;
   --text-muted:     145 130 115;
@@ -26,7 +29,7 @@
   --warning:  201 142 36;
   --info:     30 86 144;               /* navy */
 
-  --accent:   199 60 70;               /* FT salmon-red. Or use brand accent. */
+  --accent:   199 60 70;               /* salmon-red. Or use brand accent. */
   --border:   28 22 16;                /* used with /alpha */
   --radius-md: 0.125rem;               /* 2px — sharp */
   --radius-lg: 0.25rem;                /* 4px — slightly rounded only */

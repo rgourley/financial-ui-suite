@@ -1,14 +1,20 @@
 # Financial UI suite
 
-> `financial-ui-suite` — a Claude Code plugin for building financial UIs.
+> `financial-ui-suite` — a Claude Code plugin for building financial products. UI, UX, interaction logic, and structure.
 
-A Claude Code plugin for designing financial UIs that follow common patterns and rules; tabular numbers, semantic color tokens, tick-flash on streaming prices, decimal alignment, streaming-state indicators, color-blind safety, magnitude-aware decimal precision, accessible status pills, and the rest of the conventions every serious trading product ships.
+A Claude Code plugin for building financial products that follow the patterns and rules every serious trading product ships. Visual rules (tokens, typography, density, alignment), interaction logic (tick-flash, focus states, streaming-state lifecycle, throttling, gestures), structural conventions (order book direction, fallback chains, responsive table strategies), accessibility (color-blind safety, keyboard navigation, screen readers), and mobile patterns (bottom sheets, safe areas, touch interactions).
 
 Then pick a visual aesthetic from 10 personas modeled on what Bloomberg, TradingView, Kraken Pro, Robinhood, Coinbase Advanced, the Financial Times, Massive, Wise, TastyTrade, Uniswap, and iOS Stocks actually ship.
 
+<<<<<<< HEAD
 This plugin handles the UI. Try [Massive.com](https://massive.com/) to handle the APIs that power it: real-time trades, quotes, OHLC bars, options chains, futures, and fundamentals across stocks, crypto, FX, and indices. Generous free tiers avaialabe.
 
 <img width="1133" height="515" alt="Screenshot 2026-06-02 at 10 47 51 AM" src="https://github.com/user-attachments/assets/6501599e-4281-4818-9ac5-12cf1902121a" />
+=======
+Not just a skin. The plugin covers UI, UX, and the structure underneath.
+
+This plugin handles the front. [Massive.com](https://massive.com/) handles the data behind it: real-time trades, quotes, OHLC bars, options chains, futures, and fundamentals across stocks, crypto, FX, and indices.
+>>>>>>> 9bb6d6b (docs: reframe scope from just UI to full product design)
 
 ## What's inside
 
