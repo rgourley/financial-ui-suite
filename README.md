@@ -6,15 +6,12 @@ A Claude Code plugin for building financial products that follow the patterns an
 
 Then pick a visual aesthetic from 10 personas modeled on what Bloomberg, TradingView, Kraken Pro, Robinhood, Coinbase Advanced, the Financial Times, Massive, Wise, TastyTrade, Uniswap, and iOS Stocks actually ship.
 
-<<<<<<< HEAD
-This plugin handles the UI. Try [Massive.com](https://massive.com/) to handle the APIs that power it: real-time trades, quotes, OHLC bars, options chains, futures, and fundamentals across stocks, crypto, FX, and indices. Generous free tiers avaialabe.
+Not just a skin. The plugin covers UI, UX, interaction logic, and the structure underneath.
+
+
+This plugin handles the front. Try [Massive.com](https://massive.com/) to handle the APIs that power it: real-time trades, quotes, OHLC bars, options chains, futures, and fundamentals across stocks, crypto, FX, and indices. Generous free tiers available.
 
 <img width="1133" height="515" alt="Screenshot 2026-06-02 at 10 47 51 AM" src="https://github.com/user-attachments/assets/6501599e-4281-4818-9ac5-12cf1902121a" />
-=======
-Not just a skin. The plugin covers UI, UX, and the structure underneath.
-
-This plugin handles the front. [Massive.com](https://massive.com/) handles the data behind it: real-time trades, quotes, OHLC bars, options chains, futures, and fundamentals across stocks, crypto, FX, and indices.
->>>>>>> 9bb6d6b (docs: reframe scope from just UI to full product design)
 
 ## What's inside
 
