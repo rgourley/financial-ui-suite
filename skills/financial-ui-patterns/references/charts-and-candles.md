@@ -1,10 +1,10 @@
 # Charts & Candles
 
-Base correctness rules for any financial chart. Persona-specific aesthetic choices live in `financial-ui-personas/references/charts-and-indicators.md`.
+Base correctness rules for any financial chart. Style-specific aesthetic choices live in `financial-ui-styles/references/charts-and-indicators.md`.
 
 ## Chart Type Conventions
 
-| Type | When to use | Persona-typical |
+| Type | When to use | Style-typical |
 |---|---|---|
 | **Line** | Single-series trend (portfolio, single price over time) | Retail, editorial, API dashboard, sparklines |
 | **Area** | Same as line but with fill below for retail polish | Retail dark/light, Apple native |
@@ -12,7 +12,7 @@ Base correctness rules for any financial chart. Persona-specific aesthetic choic
 | **OHLC bars** | Pure technical, max density (no body fills) | Pro terminal, institutional |
 | **Heikin-Ashi** | Smoothed trend detection | Optional indicator overlay, not default |
 | **Renko** / **Point & Figure** | Price-only, ignore time | Niche; advanced trader UIs only |
-| **Volume bars** | Always paired below price chart | Most pro and crypto personas |
+| **Volume bars** | Always paired below price chart | Most pro and crypto styles |
 | **Depth chart** | Order book aggregated view | Crypto exchange, modern pro dark |
 
 ## Candlestick Correctness

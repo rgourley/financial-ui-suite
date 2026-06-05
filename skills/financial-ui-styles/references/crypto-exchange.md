@@ -86,7 +86,7 @@ Similar to Modern Pro Dark but with slightly more vertical padding on asset cell
 - **Hover:** bg change to `surface-hover/40`
 - **Cell-level color:** more aggressive than Modern Pro Dark. Gain/loss cells get tinted backgrounds (`bg-positive/10` etc.), not just colored text.
 
-## Persona-Specific Patterns
+## Style-Specific Patterns
 
 ### Pair display
 - Format: `BTC/USDT`, `ETH/USDC` — slash-separated

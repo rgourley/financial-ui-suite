@@ -1,10 +1,10 @@
-# Charts & Indicators by Persona
+# Charts & Indicators by Style
 
-Each persona has distinct chart conventions. Use the right chart type for the right audience. Base chart correctness is in `financial-ui-patterns/references/charts-and-candles.md` — load it first.
+Each style has distinct chart conventions. Use the right chart type for the right audience. Base chart correctness is in `financial-ui-patterns/references/charts-and-candles.md` — load it first.
 
 ## Quick Matrix
 
-| Persona | Default chart | Indicators | Volume | Layout |
+| Style | Default chart | Indicators | Volume | Layout |
 |---|---|---|---|---|
 | `modern-pro-dark` | Candlesticks | 2-3 overlays + 1 panel | Yes, 1/3 height | Multi-panel stacking |
 | `pro-terminal` | OHLC bars | 4-5 indicators stacked | Yes, in amber | 4-panel grid |
@@ -17,7 +17,7 @@ Each persona has distinct chart conventions. Use the right chart type for the ri
 | `defi-native` | Smooth line, gradient fill | None | Optional | Single panel |
 | `apple-native` | Smooth area filled | None | No | Single panel + period selector |
 
-## Per-Persona Detail
+## Per-Style Detail
 
 ### modern-pro-dark
 - **Chart:** TradingView-style candlesticks
@@ -153,7 +153,7 @@ Never use semantic positive/negative for indicators themselves — those colors 
 | Bézier-smoothed line on tick data | Misrepresents actual prices |
 | Rainbow palette for indicators | Hard to scan, doesn't scale |
 | Volume same height as price | Wrong hierarchy |
-| Candles in retail-polish personas | Reads as too technical |
+| Candles in retail-polish styles | Reads as too technical |
 | Line chart for active trader pro UI | Loses OHLC information |
 | No timezone on time axis | Global users confused |
 | Animated indicator updates | Trader fatigue |

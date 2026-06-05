@@ -10,7 +10,7 @@
 /* LIGHT (default for editorial) */
 :root[data-theme="light"] {
   /* Surfaces — warm off-white, editorial leaning. Softer than FT's signature
-     salmon-cream (#FFF1E5) so the persona reads as generic editorial-financial
+     salmon-cream (#FFF1E5) so the style reads as generic editorial-financial
      rather than strictly FT-identified. Swap to #FFF1E5 if you specifically
      want FT vibes. */
   --surface:           250 246 238;    /* #FAF6EE warm off-white */
@@ -64,7 +64,7 @@
 | Bylines / metadata | Sans | 12-13px | 500, italics OK |
 | Pull quote | Serif italic | 22-32px | 400 |
 
-**Editorial Financial is the one persona where data tables use mono.** Newspapers print data tables in mono; reproduce that on screen.
+**Editorial Financial is the one style where data tables use mono.** Newspapers print data tables in mono; reproduce that on screen.
 
 ## Density
 
@@ -192,7 +192,7 @@ Slower pace than Modern Pro Dark. Editorial assumes the user reads, not just sca
 - [ ] Background is cream/beige in light mode, warm-near-black in dark
 - [ ] Headlines use a display serif font
 - [ ] Body uses sans or serif body font with 1.55+ leading
-- [ ] **Data tables use mono font** (this is the persona's distinguishing rule)
+- [ ] **Data tables use mono font** (this is the style's distinguishing rule)
 - [ ] Numbers still have `tabular-nums`
 - [ ] Radius is 0-4px throughout
 - [ ] Section labels are accent-colored, ALL CAPS, sans, 11px

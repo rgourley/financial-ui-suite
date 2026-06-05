@@ -106,7 +106,7 @@ Less dense than crypto-exchange because DeFi is **single-action focused** (one s
 - **Hover:** glow effect in brand color, slight scale (1.01)
 - **Active:** brief brand-color flash
 
-## Persona-Specific Patterns
+## Style-Specific Patterns
 
 ### Connect Wallet button
 - Always top-right, prominent
@@ -167,7 +167,7 @@ Less dense than crypto-exchange because DeFi is **single-action focused** (one s
 
 | Don't | Why |
 |---|---|
-| Use institutional/Pro-Terminal aesthetic | Persona is playful, product-led |
+| Use institutional/Pro-Terminal aesthetic | Style is playful, product-led |
 | Use solid opaque cards exclusively | Glass effects are signature |
 | Hide gas costs pre-transaction | Must be visible; users hate gas surprises |
 | Hide chain/network indicator | Multi-chain awareness is critical |

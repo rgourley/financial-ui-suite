@@ -7,7 +7,7 @@
 ## Token Set
 
 ```css
-/* DARK (default — this persona is dark-native) */
+/* DARK (default — this style is dark-native) */
 :root[data-theme="dark"] {
   /* Surfaces — true black or near-true-black */
   --surface:           0 0 0;          /* pure black, Robinhood style */
@@ -76,7 +76,7 @@ Mono usage here is **light**. Retail apps avoid mono because it reads "engineer-
 | Tap target minimum | 44px |
 | Hero number block | 80-120px tall |
 
-Density is **the most generous** of all personas. Robinhood ships with massive whitespace. Don't fight it.
+Density is **the most generous** of all styles. Robinhood ships with massive whitespace. Don't fight it.
 
 ## Visual Rules
 
@@ -132,7 +132,7 @@ Density is **the most generous** of all personas. Robinhood ships with massive w
 | Use mono for tickers and prices | Reads as "developer tool" not "consumer app" |
 | Use small radii (<8px) | Sharp corners feel cold/institutional |
 | Use hairline borders | Retail polish uses elevation, not lines |
-| Add dense tables (24-32px rows) | This persona is generous; cramming destroys the feel |
+| Add dense tables (24-32px rows) | This style is generous; cramming destroys the feel |
 | Use multiple accent colors | One color is the brand identity |
 | Skip the hero number | Every retail app has a giant portfolio total |
 | Use serif anywhere | Retail polish is sans-only |

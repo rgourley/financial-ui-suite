@@ -75,7 +75,7 @@
 | Function key strip | 24-28px tall |
 | Status bar strip | 20-24px tall |
 
-Pro Terminal is **the densest of all personas.** 40+ rows per screen is expected.
+Pro Terminal is **the densest of all styles.** 40+ rows per screen is expected.
 
 ## Visual Rules
 

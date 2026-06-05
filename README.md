@@ -26,8 +26,17 @@ skills/
 │       ├── accessibility.md            Color blindness, keyboard, screen readers
 │       ├── mobile-and-responsive.md    Phone/tablet patterns, bottom sheets, touch
 │       ├── industry-patterns.md        Conventions from Bloomberg, Kraken, etc.
-│       └── charts-and-candles.md       OHLC structure, volume, indicators (base)
-└── financial-ui-personas/         Aesthetic layer (pick one)
+│       ├── charts-and-candles.md       OHLC structure, volume, indicators (base)
+│       ├── loading-and-skeletons.md    First-load and reconnect treatments
+│       ├── empty-and-error-states.md   Empty/rejected/closed/rate-limit patterns
+│       ├── timestamps-and-timezones.md Trade times, "as of" stamps, multi-TZ
+│       ├── virtualization.md           Tables 100+ streaming rows, trades tape
+│       ├── chart-interactions.md       Crosshair, zoom/pan, drawing tools, animations
+│       ├── order-entry-and-lifecycle.md  Forms, types, preview, pending→filled states, T&S
+│       ├── alerts-and-disclosures.md   Price alerts, escalation, PDT/wash-sale/options
+│       ├── data-sources-and-freshness.md  Real-time→delayed→stale chain, sources, multi-account
+│       └── heatmaps-and-density-viz.md  Sector heatmap, options color scale, IV surface, correlation
+└── financial-ui-styles/           Aesthetic layer (pick one)
     ├── SKILL.md
     └── references/
         ├── modern-pro-dark.md          TradingView, Kraken Pro, Hyperliquid
@@ -40,7 +49,7 @@ skills/
         ├── api-dashboard.md            Massive, Stripe, Vercel, Linear
         ├── defi-native.md              Uniswap, Jupiter, Aave, Phantom
         ├── apple-native.md             iOS Stocks, macOS Stocks widget
-        └── charts-and-indicators.md    Per-persona chart treatments
+        └── charts-and-indicators.md    Per-style chart treatments
 ```
 <img width="1130" height="370" alt="Screenshot 2026-06-02 at 11 04 37 AM" src="https://github.com/user-attachments/assets/44bcc8d0-3105-44e3-992c-c7002f6d91f8" />
 
@@ -50,11 +59,11 @@ skills/
 ```
 product-design                  general atomic decisions for any SaaS UI
 financial-ui-patterns           finance-specific correctness (mandatory)
-financial-ui-personas           pick exactly one visual aesthetic
+financial-ui-styles             pick exactly one visual aesthetic
 ```
 <img width="1113" height="645" alt="Screenshot 2026-06-02 at 10 48 12 AM" src="https://github.com/user-attachments/assets/b28875c1-1d18-45bc-9720-c029bc8b9224" />
 
-Use the patterns layer always. Pick one persona per product.
+Use the patterns layer always. Pick one style per product.
 
 ## What it prevents
 
@@ -75,15 +84,26 @@ The two skills capture the specific patterns Bloomberg, Kraken, TradingView, Coi
 
 ## Install
 
-```bash
-# Add this plugin's marketplace
-claude plugin marketplace add /path/to/financial-ui-suite
+**From GitHub:**
 
-# Install the plugin
+```bash
+git clone https://github.com/rgourley/financial-ui-suite.git
+claude plugin marketplace add ./financial-ui-suite
+/plugin install financial-ui-suite@financial-ui-suite-dev
+```
+
+**From a local checkout:**
+
+```bash
+claude plugin marketplace add /path/to/financial-ui-suite
 /plugin install financial-ui-suite@financial-ui-suite-dev
 ```
 
 Once installed, the skills auto-load when Claude detects financial UI work — anything with prices, P&L, order books, tickers, holdings, charts, or streaming market data.
+
+## Scope
+
+Code examples target **React + Tailwind**. The rules (semantic tokens, `tabular-nums`, decimal alignment, tick flash, freshness chain, streaming/state lifecycle, accessibility) are framework-agnostic — translate the JSX/CSS to Svelte, Vue, Solid, or vanilla as needed. Token definitions in CSS variables work everywhere.
 
 <img width="1135" height="566" alt="Screenshot 2026-06-02 at 10 48 24 AM" src="https://github.com/user-attachments/assets/92c2d543-f177-4944-839c-8e9ac2caa09f" />
 
@@ -98,18 +118,24 @@ After installing, no special invocation needed. Triggers:
 
 ## Verification
 
-Both skills built using TDD-for-documentation discipline (see `superpowers:writing-skills`). Each was tested against a baseline subagent (rendering without the skill) and verified against a second subagent (rendering with the skill loaded). Verified-distinct output across personas.
+Two layers:
+
+1. **Agent self-check** — every reference and SKILL.md ships a checklist the agent runs against the produced UI (tabular nums, semantic tokens, tick flash, light theme, etc.).
+2. **Script check** — `scripts/verify-financial-ui.sh <path>` greps your codebase for the most common anti-patterns (raw `text-green-*`, dynamic Tailwind classes, `toFixed(2)` on prices, hardcoded hex colors, centered numeric columns). Exits 1 on hit.
+
+```bash
+./scripts/verify-financial-ui.sh ../my-app/src
+```
+
+The skills themselves were built using TDD-for-documentation (see `superpowers:writing-skills`): tested against a baseline subagent rendering without the skill and verified against a subagent rendering with the skill loaded. Verified-distinct output across styles.
 
 ## Status
 
-- Version 0.3.0 — adds dedicated mobile/responsive reference (responsive tables, bottom sheets, touch chart interaction, mobile order entry, safe areas, gestures)
-- Version 0.2.0 — all 10 personas fully fleshed out
-- Each persona ships with complete CSS variable token set (dark + light), typography table, density numbers, visual rules, persona-specific patterns, anti-patterns, example component code, reference URLs, and per-persona verification checklist
-- Cross-persona chart treatments documented in `references/charts-and-indicators.md`
+See [CHANGELOG.md](./CHANGELOG.md) for version history.
 
 ## Trademark notice
 
-Brand and product names referenced throughout this project (Bloomberg, TradingView, Kraken, Coinbase, Binance, Robinhood, Public, Financial Times, Wise, Revolut, Cash App, Massive, Stripe, Vercel, Linear, TastyTrade, Uniswap, Apple, and others) are used for illustrative, descriptive, and educational purposes only — to ground each persona in a concrete reference. This project is not affiliated with, endorsed by, sponsored by, or in any way officially connected to any of those companies. All trademarks, service marks, and trade names are the property of their respective owners.
+Brand and product names referenced throughout this project (Bloomberg, TradingView, Kraken, Coinbase, Binance, Robinhood, Public, Financial Times, Wise, Revolut, Cash App, Massive, Stripe, Vercel, Linear, TastyTrade, Uniswap, Apple, and others) are used for illustrative, descriptive, and educational purposes only — to ground each style in a concrete reference. This project is not affiliated with, endorsed by, sponsored by, or in any way officially connected to any of those companies. All trademarks, service marks, and trade names are the property of their respective owners.
 
 ## License
 

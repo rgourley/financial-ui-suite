@@ -26,7 +26,7 @@
   --warning:  217 158 35;
   --info:     59 130 246;
 
-  /* Brand accent — pick ONE from the persona's reference products */
+  /* Brand accent — pick ONE from the style's reference products */
   --accent:   132 71 226;              /* Stripe-style purple, or use brand */
 
   --border:   255 255 255;
@@ -50,7 +50,7 @@
 }
 ```
 
-**Persona-specific accent picks:**
+**Style-specific accent picks:**
 - Stripe-flavored: `132 71 226` (purple)
 - Vercel-flavored: monochrome (use `255 255 255` accent, prove yourself with type/space alone)
 - Linear-flavored: `94 106 210` (indigo-purple)
@@ -196,7 +196,7 @@ API dashboards prioritize legibility over density. Devs spend hours reading docs
 
 - Stripe — https://dashboard.stripe.com (the gold standard; study payments table, customer detail, API logs)
 - Vercel — https://vercel.com/dashboard (monochrome aesthetic, study project list, deployments)
-- Linear — https://linear.app (issue tracker but persona-defining for dev tools)
+- Linear — https://linear.app (issue tracker but style-defining for dev tools)
 - Polygon.io / Massive.com — https://polygon.io/dashboard (financial-API-product reference)
 - Supabase — https://supabase.com/dashboard (project + table editor patterns)
 - PlanetScale — https://app.planetscale.com (db dashboard reference)

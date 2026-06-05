@@ -55,6 +55,15 @@ This skill codifies the patterns that production trading UIs (Kraken, Coinbase, 
 | `references/mobile-and-responsive.md` | Targeting phones/tablets, responsive tables, bottom sheets, touch interactions |
 | `references/industry-patterns.md` | Want specific references from Kraken/Coinbase/TradingView/Bloomberg |
 | `references/charts-and-candles.md` | Building any chart (candles, OHLC, line, volume, indicators) |
+| `references/loading-and-skeletons.md` | First-load and reconnect treatments for tables, order books, charts |
+| `references/empty-and-error-states.md` | Empty positions/orders, rejected orders, market closed, rate-limit copy |
+| `references/timestamps-and-timezones.md` | Trade times, "as of" stamps, multi-TZ status bar, ms precision rules |
+| `references/virtualization.md` | Tables over 100 streaming rows, trades tape, sticky headers, row memoization |
+| `references/chart-interactions.md` | Crosshair, zoom/pan, drawing tools, multi-pane stacks, number animations |
+| `references/order-entry-and-lifecycle.md` | Order forms, types (market/limit/stop/bracket/OCO), preview-then-submit, pending→filled states, time-and-sales |
+| `references/alerts-and-disclosures.md` | Price alerts, fill notifications, escalation rules, PDT/wash-sale/options/restricted-symbol disclosures |
+| `references/data-sources-and-freshness.md` | Real-time/delayed/stale/frozen/disconnected chain, source chips (CBOE, NBBO), multi-account context |
+| `references/heatmaps-and-density-viz.md` | Sector heatmaps, options chain color scales, IV surfaces, correlation grids |
 
 ## Core Pattern: Numbers
 
@@ -108,8 +117,8 @@ Define semantic colors via CSS variables, expose via Tailwind, never use raw col
 }
 ```
 
+**Tailwind v3 form** (`tailwind.config.ts`):
 ```ts
-// tailwind.config.ts
 colors: {
   positive: "rgb(var(--positive) / <alpha-value>)",
   negative: "rgb(var(--negative) / <alpha-value>)",
@@ -122,6 +131,19 @@ colors: {
     secondary: "rgb(var(--text-secondary) / <alpha-value>)",
     muted: "rgb(var(--text-muted) / <alpha-value>)",
   },
+}
+```
+
+**Tailwind v4 form** (in your CSS, no config file needed):
+```css
+@theme {
+  --color-positive: rgb(var(--positive));
+  --color-negative: rgb(var(--negative));
+  --color-surface: rgb(var(--surface));
+  --color-surface-elevated: rgb(var(--surface-elevated));
+  --color-text-primary: rgb(var(--text-primary));
+  --color-text-secondary: rgb(var(--text-secondary));
+  --color-text-muted: rgb(var(--text-muted));
 }
 ```
 

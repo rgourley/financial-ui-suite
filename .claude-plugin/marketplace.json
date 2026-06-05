@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "financial-ui-suite",
-      "description": "Production-grade financial UI design skills: correctness patterns + 10 visual personas for Bloomberg, TradingView, Robinhood, Coinbase, FT, Massive, and more.",
+      "description": "Production-grade financial UI design skills: correctness patterns + 10 visual styles for Bloomberg, TradingView, Robinhood, Coinbase, FT, Massive, and more.",
       "version": "0.3.0",
       "source": "./",
       "author": {

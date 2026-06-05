@@ -80,7 +80,7 @@ Slightly more generous than Modern Pro Dark to accommodate Greeks and probabilit
 - **Hover:** bg change to `surface-hover/40`
 - **Focus:** magenta ring + soft halo
 
-## Persona-Specific Patterns
+## Style-Specific Patterns
 
 ### Options chain (the centerpiece)
 - Strike column down the middle (mono)
@@ -129,7 +129,7 @@ Slightly more generous than Modern Pro Dark to accommodate Greeks and probabilit
 
 | Don't | Why |
 |---|---|
-| Hide Greeks behind hover | Persona's selling point is Greeks visibility |
+| Hide Greeks behind hover | Style's selling point is Greeks visibility |
 | Use Modern Pro Dark's blue accent | The magenta IS the identity |
 | Ship without IV rank | Table stakes for options trading |
 | Ship without expected move | Same |
@@ -137,7 +137,7 @@ Slightly more generous than Modern Pro Dark to accommodate Greeks and probabilit
 | Use generic green/red on buttons | Tasty uses pink/magenta |
 | Show only call OR put | Always show both sides symmetrically |
 | Use small radii (<4px) | Reads too pro-terminal-ish |
-| Skip strategy P&L graph | Defines the persona |
+| Skip strategy P&L graph | Defines the style |
 
 ## Example: option chain row
 

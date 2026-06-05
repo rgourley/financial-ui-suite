@@ -62,9 +62,9 @@
 | Card title | Sans | 15-17px | 600 |
 | Form field label | Sans | 13-14px | 500 |
 | Numbers (balance, amount) | Sans + `tabular-nums` | matches context | 600-700 |
-| Tickers (rare in this persona) | Sans bold (NOT mono) | 14-15px | 700 |
+| Tickers (rare in this style) | Sans bold (NOT mono) | 14-15px | 700 |
 
-Mono is **avoided** in this persona — it reads as "developer tool" or "trading screen" and breaks the friendly consumer aesthetic.
+Mono is **avoided** in this style — it reads as "developer tool" or "trading screen" and breaks the friendly consumer aesthetic.
 
 ## Density
 
@@ -78,7 +78,7 @@ Mono is **avoided** in this persona — it reads as "developer tool" or "trading
 | Form field height | 48-56px |
 | Tap target minimum | 48px |
 
-The **most generous density of any persona.** International consumer fintech ships with massive whitespace because users span all literacy levels and big targets reduce error.
+The **most generous density of any style.** International consumer fintech ships with massive whitespace because users span all literacy levels and big targets reduce error.
 
 ## Visual Rules
 
@@ -91,7 +91,7 @@ The **most generous density of any persona.** International consumer fintech shi
 - **Imagery:** illustrations welcome (hero illustrations, flag icons for currencies, mascots)
 - **Icons:** rounded, friendly, brand-colored
 
-## Persona-Specific Patterns
+## Style-Specific Patterns
 
 ### Hero balance card
 - Large display number (32-48px sans bold)
@@ -145,11 +145,11 @@ The **most generous density of any persona.** International consumer fintech shi
 |---|---|
 | Use mono on prices or any prominent number | Reads as developer tool, kills friendly feel |
 | Use small radii (<8px) | Sharp corners feel cold/institutional |
-| Use dense tables (<40px rows) | Persona is generous; cramming destroys it |
-| Skip illustrations/imagery | Persona expects warmth |
+| Use dense tables (<40px rows) | Style is generous; cramming destroys it |
+| Skip illustrations/imagery | Style expects warmth |
 | Use serif | Sans-only |
 | Use only one brand color | Palette IS the brand — use multiple supportive colors |
-| Use dark mode as default | Light-native persona |
+| Use dark mode as default | Light-native style |
 | Tiny tap targets | Mobile-first means 48px+ |
 | Hide the hero number | Big balance display is the signature |
 

@@ -86,7 +86,9 @@ font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
 font-family: ui-monospace, "SF Pro Mono", "SF Mono", Menlo, monospace; /* for mono */
 ```
 
-This is the **only persona where the OS font stack matters more than custom fonts.** On Apple hardware, the system fonts render perfectly. On other platforms, the fallback is acceptable but not identical.
+This is the **only style where the OS font stack matters more than custom fonts.** On Apple hardware, the system fonts render perfectly. On other platforms, the fallback is acceptable but not identical.
+
+**Licensing:** SF Pro is Apple's font, licensed for **Apple platforms only** (iOS, iPadOS, macOS apps and websites that promote Apple software/hardware). Do **not** ship `SF-Pro.woff2` from your web server for a general-purpose web app — Apple's license doesn't cover it. The `-apple-system` / `BlinkMacSystemFont` system stack above is safe because the browser resolves it locally on Apple devices and falls back elsewhere. If you need SF Pro's look cross-platform, use Inter or Geist as a close visual match.
 
 ## Density
 
@@ -111,7 +113,7 @@ Apple Human Interface Guidelines mandate **44pt minimum touch targets**. Don't g
 - **Press states:** brief opacity change on tap (0.6 alpha during touch)
 - **Motion:** spring animations for sheet presentations; otherwise minimal
 
-## Persona-Specific Patterns
+## Style-Specific Patterns
 
 ### Section grouping
 - iOS Settings-app pattern
