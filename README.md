@@ -2,6 +2,8 @@
 
 > `financial-ui-suite` — a Claude Code plugin for building financial products. UI, UX, interaction logic, and structure.
 
+<img width="1280" height="640" alt="image-1780806802728" src="https://github.com/user-attachments/assets/63889050-0041-4995-85ca-1cbe38692034" />
+
 A Claude Code plugin for building financial products that follow the patterns and rules every serious trading product ships. Visual rules (tokens, typography, density, alignment), interaction logic (tick-flash, focus states, streaming-state lifecycle, throttling, gestures), structural conventions (order book direction, fallback chains, responsive table strategies), accessibility (color-blind safety, keyboard navigation, screen readers), and mobile patterns (bottom sheets, safe areas, touch interactions).
 
 Then pick a visual aesthetic from 10 styles modeled on what Bloomberg, TradingView, Kraken Pro, Robinhood, Coinbase Advanced, the Financial Times, Massive, Wise, TastyTrade, Uniswap, and iOS Stocks actually ship.
