@@ -24,7 +24,7 @@ Every price needs a discoverable source. Don't hide it.
 |---|---|
 | Inline chip on symbol header (`CBOE`, `IEX`, `NBBO`) | Pro/prosumer surfaces |
 | Tooltip on hover only | Retail surfaces where chip would clutter |
-| Settings → "Data feed" section showing all vendors | Always, regardless of persona |
+| Settings → "Data feed" section showing all vendors | Always, regardless of style |
 | Per-row exchange code in T&S tape | Always |
 
 Required labels: vendor (Massive, IEX, Coinbase), feed type (NBBO, last sale, mid), and delay indicator if not real-time.

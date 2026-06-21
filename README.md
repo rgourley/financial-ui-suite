@@ -6,7 +6,7 @@
 
 A Claude Code plugin for building financial products that follow the patterns and rules every serious trading product ships. Visual rules (tokens, typography, density, alignment), interaction logic (tick-flash, focus states, streaming-state lifecycle, throttling, gestures), structural conventions (order book direction, fallback chains, responsive table strategies), accessibility (color-blind safety, keyboard navigation, screen readers), and mobile patterns (bottom sheets, safe areas, touch interactions).
 
-Then pick a visual aesthetic from 10 styles modeled on what Bloomberg, TradingView, Kraken Pro, Robinhood, Coinbase Advanced, the Financial Times, Massive, Wise, TastyTrade, Uniswap, and iOS Stocks actually ship.
+Then pick a visual aesthetic from 13 styles modeled on what Bloomberg, TradingView, Kraken Pro, Robinhood, Coinbase Advanced, the Financial Times, Massive, Wise, TastyTrade, Uniswap, iOS Stocks, Yahoo Finance, AlphaSense, and Yahoo's new AlphaSpace terminal actually ship.
 
 This plugin covers UI, UX, interaction logic, and the structure underneath.
 
@@ -51,6 +51,9 @@ skills/
         ├── api-dashboard.md            Massive, Stripe, Vercel, Linear
         ├── defi-native.md              Uniswap, Jupiter, Aave, Phantom
         ├── apple-native.md             iOS Stocks, macOS Stocks widget
+        ├── yahoo-prosumer.md           Yahoo Finance (current redesign), Seeking Alpha, Investing.com
+        ├── alphaspace.md               Yahoo Finance AlphaSpace, TradingView desktop
+        ├── research-terminal.md        AlphaSense, Visible Alpha, FactSet, Tegus
         └── charts-and-indicators.md    Per-style chart treatments
 ```
 <img width="1130" height="370" alt="Screenshot 2026-06-02 at 11 04 37 AM" src="https://github.com/user-attachments/assets/44bcc8d0-3105-44e3-992c-c7002f6d91f8" />
@@ -131,13 +134,29 @@ Two layers:
 
 The skills themselves were built using TDD-for-documentation (see `superpowers:writing-skills`): tested against a baseline subagent rendering without the skill and verified against a subagent rendering with the skill loaded. Verified-distinct output across styles.
 
+## Style previews
+
+Three of the newer styles shipped with full 1200×630 mockups (HTML source + rendered PNG in [`examples/og-images/`](./examples/og-images)). Each is rendered with placeholder branding to keep the focus on the **style**, not the source product.
+
+### `yahoo-prosumer` — light consumer ticker page
+
+![yahoo-prosumer preview](./examples/og-images/yahoo-prosumer-og.png)
+
+### `alphaspace` — multi-panel consumer terminal with AI agent rail
+
+![alphaspace preview](./examples/og-images/alphaspace-og.png)
+
+### `research-terminal` — buy-side document search with AI summary
+
+![research-terminal preview](./examples/og-images/research-terminal-og.png)
+
 ## Status
 
 See [CHANGELOG.md](./CHANGELOG.md) for version history.
 
 ## Trademark notice
 
-Brand and product names referenced throughout this project (Bloomberg, TradingView, Kraken, Coinbase, Binance, Robinhood, Public, Financial Times, Wise, Revolut, Cash App, Massive, Stripe, Vercel, Linear, TastyTrade, Uniswap, Apple, and others) are used for illustrative, descriptive, and educational purposes only — to ground each style in a concrete reference. This project is not affiliated with, endorsed by, sponsored by, or in any way officially connected to any of those companies. All trademarks, service marks, and trade names are the property of their respective owners.
+Brand and product names referenced throughout this project (Bloomberg, TradingView, Kraken, Coinbase, Binance, Robinhood, Public, Financial Times, Wise, Revolut, Cash App, Massive, Stripe, Vercel, Linear, TastyTrade, Uniswap, Apple, Yahoo, AlphaSense, and others) are used for illustrative, descriptive, and educational purposes only — to ground each style in a concrete reference. This project is not affiliated with, endorsed by, sponsored by, or in any way officially connected to any of those companies. All trademarks, service marks, and trade names are the property of their respective owners.
 
 ## License
 

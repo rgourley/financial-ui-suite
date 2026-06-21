@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>yahoo-prosumer · financial-ui-suite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* LIGHT theme (Yahoo Finance default) */
+    --surface:           255 255 255;
+    --surface-elevated:  255 255 255;
+    --surface-panel:     247 248 250;     /* subtle gray-blue cards */
+    --surface-hover:     239 242 246;
+    --surface-rail:      250 251 253;
+
+    --text-primary:    21 27 36;
+    --text-secondary:  104 111 124;
+    --text-muted:      143 152 165;
+
+    --positive:        2 138 78;          /* Yahoo green */
+    --negative:        216 31 42;         /* Yahoo red */
+
+    --accent:          15 105 255;        /* Yahoo blue, for action buttons */
+    --accent-bright:   0 196 76;          /* Trade button bright green */
+
+    --border-soft:     232 235 240;
+    --border-mid:      221 226 232;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1200px; height: 630px;
+    background: rgb(var(--surface));
+    color: rgb(var(--text-primary));
+    font-family: 'Inter', -apple-system, 'Helvetica Neue', system-ui, sans-serif;
+    overflow: hidden;
+  }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .pos { color: rgb(var(--positive)); }
+  .neg { color: rgb(var(--negative)); }
+
+  /* TICKER TAPE (Yahoo's gray tile style) */
+  .tape {
+    height: 38px;
+    background: rgb(var(--surface-panel));
+    border-bottom: 1px solid rgb(var(--border-soft));
+    display: flex; align-items: center; gap: 1px; padding: 4px 8px;
+    overflow: hidden;
+  }
+  .tape-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 4px 12px;
+    flex-shrink: 0;
+    font-size: 11.5px;
+    border-radius: 4px;
+  }
+  .tape-sym { font-weight: 700; color: rgb(var(--text-primary)); font-size: 11px; }
+  .tape-px { color: rgb(var(--text-secondary)); }
+  .tape-dt { font-weight: 600; }
+
+  /* APP HEADER (yahoo finance bar) */
+  .app-header {
+    height: 44px;
+    border-bottom: 1px solid rgb(var(--border-soft));
+    display: flex; align-items: center; padding: 0 24px; gap: 26px;
+    background: rgb(var(--surface));
+  }
+  .yf-logo {
+    font-weight: 800; font-size: 16px;
+    letter-spacing: -0.02em; color: rgb(var(--text-primary));
+  }
+  .yf-logo .style { color: rgb(var(--accent)); }
+  .yf-nav {
+    display: flex; align-items: center; gap: 22px;
+    font-size: 12.5px; font-weight: 500; color: rgb(var(--text-secondary));
+  }
+  .yf-nav .item.active {
+    color: rgb(var(--accent));
+    font-weight: 600;
+    position: relative;
+  }
+  .yf-nav .item.active::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -12px; height: 3px;
+    background: rgb(var(--accent)); border-radius: 2px;
+  }
+  .yf-suite-tag {
+    margin-left: auto;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgb(var(--surface-panel));
+    border: 1px solid rgb(var(--border-mid));
+    border-radius: 999px; padding: 4px 10px;
+    font-size: 11px; font-weight: 500; color: rgb(var(--text-secondary));
+  }
+  .yf-suite-tag .dot { width: 6px; height: 6px; border-radius: 999px; background: rgb(var(--accent)); }
+
+  /* LAYOUT: sidebar + content + trending */
+  .body { display: grid; grid-template-columns: 140px 1fr 200px; height: calc(630px - 38px - 44px - 26px); }
+
+  /* SIDEBAR NAV */
+  .side {
+    background: rgb(var(--surface-rail));
+    border-right: 1px solid rgb(var(--border-soft));
+    padding: 12px 0;
+  }
+  .side-section { padding: 0 14px; }
+  .side-label { font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(var(--text-muted)); margin-bottom: 4px; }
+  .side-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 5px 8px; margin: 0 -8px;
+    font-size: 12px; color: rgb(var(--text-secondary));
+    border-radius: 4px; font-weight: 500;
+  }
+  .side-item.active {
+    background: rgb(var(--accent) / 0.08);
+    color: rgb(var(--accent));
+    font-weight: 600;
+  }
+
+  /* MAIN CONTENT */
+  .content { padding: 14px 24px 8px; overflow: hidden; }
+
+  /* QUOTE BLOCK */
+  .quote-head {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 4px;
+  }
+  .quote-co { font-size: 13.5px; font-weight: 700; color: rgb(var(--text-primary)); }
+  .quote-paren { font-size: 12px; font-weight: 600; color: rgb(var(--text-secondary)); }
+  .quote-star { color: rgb(var(--text-muted)); font-size: 12px; }
+  .quote-actions {
+    margin-left: auto; display: flex; gap: 8px;
+  }
+  .btn-trade {
+    height: 30px; padding: 0 14px;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgb(var(--accent-bright)); color: white;
+    border-radius: 999px;
+    font-size: 12px; font-weight: 700;
+  }
+  .btn-trade .rh { width: 12px; height: 12px; border-radius: 999px; background: white; }
+  .btn-action {
+    height: 30px; padding: 0 12px;
+    display: inline-flex; align-items: center; gap: 5px;
+    border: 1px solid rgb(var(--border-mid));
+    border-radius: 999px;
+    font-size: 12px; font-weight: 600; color: rgb(var(--text-secondary));
+    background: rgb(var(--surface));
+  }
+
+  /* PRICE ROW */
+  .price-row {
+    display: flex; align-items: baseline; gap: 16px;
+    padding-top: 2px;
+  }
+  .hero-price { font-size: 42px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; line-height: 1; }
+  .hero-delta { font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .hero-after {
+    font-size: 11.5px; color: rgb(var(--text-secondary)); font-variant-numeric: tabular-nums;
+    padding-left: 14px; border-left: 1px solid rgb(var(--border-mid));
+  }
+  .hero-after .lbl { color: rgb(var(--text-muted)); text-transform: uppercase; letter-spacing: 0.04em; font-size: 10px; font-weight: 600; margin-right: 4px; }
+  .hero-after .v { color: rgb(var(--text-primary)); font-weight: 600; }
+  .hero-time { font-size: 10.5px; color: rgb(var(--text-muted)); margin-top: 2px; letter-spacing: 0.02em; }
+
+  /* TAB STRIP */
+  .tabs {
+    display: flex; align-items: center; gap: 22px;
+    border-bottom: 1px solid rgb(var(--border-soft));
+    margin-top: 12px;
+    font-size: 12px;
+  }
+  .tabs .tab {
+    padding: 8px 0; font-weight: 600; color: rgb(var(--text-secondary));
+    position: relative;
+  }
+  .tabs .tab.active { color: rgb(var(--accent)); }
+  .tabs .tab.active::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
+    background: rgb(var(--accent));
+  }
+  .tabs .right-link { margin-left: auto; color: rgb(var(--accent)); font-weight: 600; }
+
+  /* CHART AREA */
+  .chart-wrap {
+    margin-top: 8px;
+    position: relative;
+    height: 200px;
+  }
+  .chart-toolbar {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 10.5px; font-weight: 600; color: rgb(var(--text-muted));
+    margin-bottom: 4px;
+  }
+  .chart-toolbar .r { padding: 3px 8px; border-radius: 3px; }
+  .chart-toolbar .r.active { background: rgb(var(--accent) / 0.1); color: rgb(var(--accent)); }
+  .chart-toolbar .sep { width: 1px; height: 12px; background: rgb(var(--border-mid)); margin: 0 4px; }
+  .chart-toolbar .right { margin-left: auto; font-size: 11px; color: rgb(var(--text-primary)); font-variant-numeric: tabular-nums; }
+  .chart-svg { width: 100%; height: 170px; display: block; }
+
+  /* STATS GRID */
+  .stats {
+    margin-top: 8px;
+    border-top: 1px solid rgb(var(--border-soft));
+    padding-top: 8px;
+    display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px 16px;
+  }
+  .stat { display: flex; flex-direction: column; gap: 1px; }
+  .stat-k { font-size: 9.5px; color: rgb(var(--text-muted)); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .stat-v { font-size: 12.5px; color: rgb(var(--text-primary)); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  /* TRENDING SIDEBAR */
+  .trending {
+    background: rgb(var(--surface-rail));
+    border-left: 1px solid rgb(var(--border-soft));
+    padding: 14px 12px;
+  }
+  .tr-head { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: rgb(var(--text-secondary)); margin-bottom: 8px; }
+  .tr-item { display: flex; align-items: center; padding: 5px 0; border-top: 1px solid rgb(var(--border-soft)); }
+  .tr-item:first-of-type { border-top: none; }
+  .tr-sym { font-size: 11.5px; font-weight: 700; color: rgb(var(--text-primary)); flex: 1; }
+  .tr-px { font-size: 11px; font-variant-numeric: tabular-nums; color: rgb(var(--text-secondary)); margin-right: 6px; }
+  .tr-dt { font-size: 10.5px; font-variant-numeric: tabular-nums; font-weight: 600; min-width: 44px; text-align: right; }
+
+  /* FOOTER */
+  .footer {
+    height: 26px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 24px;
+    font-size: 10.5px; color: rgb(var(--text-muted));
+    border-top: 1px solid rgb(var(--border-soft));
+    background: rgb(var(--surface));
+  }
+  .footer .right { color: rgb(var(--text-secondary)); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<!-- Top ticker tape -->
+<div class="tape">
+  <div class="tape-item"><span class="tape-sym">S&P 500</span><span class="tape-px tabular">5,894.30</span><span class="tape-dt tabular pos">+0.42%</span></div>
+  <div class="tape-item"><span class="tape-sym">NASDAQ</span><span class="tape-px tabular">19,218.40</span><span class="tape-dt tabular pos">+0.58%</span></div>
+  <div class="tape-item"><span class="tape-sym">DOW 30</span><span class="tape-px tabular">43,275</span><span class="tape-dt tabular pos">+0.21%</span></div>
+  <div class="tape-item"><span class="tape-sym">RUSSELL</span><span class="tape-px tabular">2,138.40</span><span class="tape-dt tabular pos">+0.34%</span></div>
+  <div class="tape-item"><span class="tape-sym">CRUDE OIL</span><span class="tape-px tabular">71.45</span><span class="tape-dt tabular pos">+1.18%</span></div>
+  <div class="tape-item"><span class="tape-sym">GOLD</span><span class="tape-px tabular">2,672.10</span><span class="tape-dt tabular neg">−0.42%</span></div>
+  <div class="tape-item"><span class="tape-sym">BTC-USD</span><span class="tape-px tabular">104,218</span><span class="tape-dt tabular pos">+1.18%</span></div>
+</div>
+
+<!-- App header (yahoo finance bar) -->
+<div class="app-header">
+  <div class="yf-logo"><span class="style">stock</span>view</div>
+  <nav class="yf-nav">
+    <span class="item active">Summary</span>
+    <span class="item">News</span>
+    <span class="item">Chart</span>
+    <span class="item">Statistics</span>
+    <span class="item">Historical Data</span>
+    <span class="item">Financials</span>
+    <span class="item">Analysis</span>
+  </nav>
+  <span class="yf-suite-tag"><span class="dot"></span>financial-ui-suite · style: yahoo-prosumer</span>
+</div>
+
+<!-- Body grid -->
+<div class="body">
+  <!-- Sidebar nav -->
+  <aside class="side">
+    <div class="side-section">
+      <div class="side-label">Sections</div>
+      <div class="side-item active">Summary</div>
+      <div class="side-item">Chart</div>
+      <div class="side-item">Conversations</div>
+      <div class="side-item">Statistics</div>
+      <div class="side-item">Historical Data</div>
+      <div class="side-item">Profile</div>
+      <div class="side-item">Financials</div>
+      <div class="side-item">Analysis</div>
+      <div class="side-item">Options</div>
+      <div class="side-item">Holders</div>
+      <div class="side-item">Sustainability</div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content">
+    <div class="quote-head">
+      <span class="quote-co">Meta Platforms, Inc.</span>
+      <span class="quote-paren">(META)</span>
+      <span class="quote-star">☆</span>
+      <div class="quote-actions">
+        <button class="btn-trade"><span class="rh"></span>Trade META</button>
+        <button class="btn-action">+ Compare</button>
+      </div>
+    </div>
+
+    <div style="font-size: 10.5px; color: rgb(var(--text-muted)); margin-bottom: 4px;">
+      NasdaqGS - Nasdaq Real-Time Price · USD
+    </div>
+
+    <div class="price-row">
+      <span class="hero-price tabular">577.22</span>
+      <span class="hero-delta tabular pos">+9.84 (+1.70%)</span>
+      <span class="hero-after"><span class="lbl">After hours</span><span class="v">574.80</span> <span class="neg">−2.42 (−0.42%)</span></span>
+    </div>
+    <div class="hero-time">At close: 4:00 PM EDT · Apr 21 · Markets close in 6 hours</div>
+
+    <div class="tabs">
+      <span class="tab active">1D</span>
+      <span class="tab">5D</span>
+      <span class="tab">1M</span>
+      <span class="tab">6M</span>
+      <span class="tab">YTD</span>
+      <span class="tab">1Y</span>
+      <span class="tab">5Y</span>
+      <span class="tab">Max</span>
+      <span class="right-link">Advanced Chart →</span>
+    </div>
+
+    <div class="chart-wrap">
+      <svg class="chart-svg" viewBox="0 0 800 170" preserveAspectRatio="none">
+        <!-- gridlines -->
+        <line x1="0" y1="34"  x2="800" y2="34"  stroke="rgb(var(--border-soft))"/>
+        <line x1="0" y1="68"  x2="800" y2="68"  stroke="rgb(var(--border-soft))"/>
+        <line x1="0" y1="102" x2="800" y2="102" stroke="rgb(var(--border-soft))"/>
+        <line x1="0" y1="136" x2="800" y2="136" stroke="rgb(var(--border-soft))"/>
+
+        <!-- Previous close dashed line -->
+        <line x1="0" y1="105" x2="800" y2="105" stroke="rgb(var(--text-muted))" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+
+        <!-- Area under line (intraday-ish) -->
+        <path d="
+          M 0,108 L 35,114 L 70,102 L 105,96 L 140,108 L 175,92 L 210,82 L 245,68
+          L 280,76 L 315,58 L 350,46 L 385,52 L 420,38 L 455,30 L 490,42 L 525,32
+          L 560,28 L 595,38 L 630,26 L 665,18 L 700,28 L 735,22 L 770,16 L 800,14
+          L 800,170 L 0,170 Z"
+          fill="rgb(2 138 78 / 0.13)"/>
+
+        <!-- Price line (green when up) -->
+        <polyline fill="none" stroke="rgb(2 138 78)" stroke-width="1.8"
+          points="0,108 35,114 70,102 105,96 140,108 175,92 210,82 245,68 280,76 315,58 350,46 385,52 420,38 455,30 490,42 525,32 560,28 595,38 630,26 665,18 700,28 735,22 770,16 800,14"/>
+
+        <!-- last point dot -->
+        <circle cx="800" cy="14" r="3" fill="rgb(2 138 78)" stroke="white" stroke-width="2"/>
+
+        <!-- Time labels at bottom -->
+        <text x="40"  y="166" font-size="9" font-family="Inter" fill="rgb(143 152 165)">9:30</text>
+        <text x="200" y="166" font-size="9" font-family="Inter" fill="rgb(143 152 165)">11:00</text>
+        <text x="360" y="166" font-size="9" font-family="Inter" fill="rgb(143 152 165)">12:30</text>
+        <text x="520" y="166" font-size="9" font-family="Inter" fill="rgb(143 152 165)">2:00</text>
+        <text x="680" y="166" font-size="9" font-family="Inter" fill="rgb(143 152 165)">3:30</text>
+      </svg>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><span class="stat-k">Previous Close</span><span class="stat-v">567.38</span></div>
+      <div class="stat"><span class="stat-k">Open</span><span class="stat-v">569.10</span></div>
+      <div class="stat"><span class="stat-k">Bid</span><span class="stat-v">577.10 × 800</span></div>
+      <div class="stat"><span class="stat-k">Ask</span><span class="stat-v">577.36 × 400</span></div>
+      <div class="stat"><span class="stat-k">Day's Range</span><span class="stat-v">568.20 – 580.15</span></div>
+      <div class="stat"><span class="stat-k">Volume</span><span class="stat-v">14.2M</span></div>
+      <div class="stat"><span class="stat-k">Market Cap</span><span class="stat-v">1.46T</span></div>
+      <div class="stat"><span class="stat-k">P/E (TTM)</span><span class="stat-v">28.42</span></div>
+    </div>
+  </main>
+
+  <!-- Trending sidebar -->
+  <aside class="trending">
+    <div class="tr-head">Trending Tickers</div>
+    <div class="tr-item"><span class="tr-sym">NVDA</span><span class="tr-px tabular">199.30</span><span class="tr-dt tabular neg">−1.18%</span></div>
+    <div class="tr-item"><span class="tr-sym">TSLA</span><span class="tr-px tabular">393.84</span><span class="tr-dt tabular neg">−1.70%</span></div>
+    <div class="tr-item"><span class="tr-sym">AAPL</span><span class="tr-px tabular">274.17</span><span class="tr-dt tabular pos">+1.48%</span></div>
+    <div class="tr-item"><span class="tr-sym">PLTR</span><span class="tr-px tabular">84.20</span><span class="tr-dt tabular pos">+3.20%</span></div>
+    <div class="tr-item"><span class="tr-sym">AMZN</span><span class="tr-px tabular">204.16</span><span class="tr-dt tabular pos">+0.42%</span></div>
+    <div class="tr-item"><span class="tr-sym">MSFT</span><span class="tr-px tabular">420.61</span><span class="tr-dt tabular neg">−0.38%</span></div>
+    <div class="tr-item"><span class="tr-sym">HIMS</span><span class="tr-px tabular">31.17</span><span class="tr-dt tabular pos">+8.15%</span></div>
+    <div class="tr-item"><span class="tr-sym">INTC</span><span class="tr-px tabular">66.00</span><span class="tr-dt tabular neg">−3.65%</span></div>
+    <div class="tr-item"><span class="tr-sym">ONDS</span><span class="tr-px tabular">10.65</span><span class="tr-dt tabular pos">+6.45%</span></div>
+    <div class="tr-item"><span class="tr-sym">AAL</span><span class="tr-px tabular">12.24</span><span class="tr-dt tabular neg">−4.19%</span></div>
+  </aside>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div>Light consumer · ticker page · sidebar nav · green chart on up day · trending rail · sans throughout</div>
+  <div class="right">github.com/rgourley/financial-ui-suite</div>
+</div>
+
+</body>
+</html>

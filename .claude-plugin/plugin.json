@@ -1,7 +1,7 @@
 {
   "name": "financial-ui-suite",
-  "description": "Production-grade financial UI design skills for Claude Code. Two composable layers: financial-ui-patterns (correctness — tabular nums, semantic tokens, tick flash, accessibility, charts) and financial-ui-styles (aesthetic — 10 distinct visual systems: Bloomberg terminal, TradingView, Robinhood, Coinbase, Financial Times, Massive/Stripe, Wise, TastyTrade, Uniswap, iOS Stocks).",
-  "version": "0.3.0",
+  "description": "Production-grade financial UI design skills for Claude Code. Two composable layers: financial-ui-patterns (correctness — tabular nums, semantic tokens, tick flash, accessibility, charts) and financial-ui-styles (aesthetic — 13 distinct visual systems: Bloomberg terminal, TradingView, Robinhood, Coinbase, Financial Times, Massive/Stripe, Wise, TastyTrade, Uniswap, iOS Stocks, Yahoo Finance, AlphaSense, and Yahoo AlphaSpace).",
+  "version": "0.4.0",
   "author": {
     "name": "Rob Gourley",
     "email": "rgourley@gmail.com"
@@ -19,6 +19,9 @@
     "tradingview",
     "robinhood",
     "polygon",
-    "charts"
+    "charts",
+    "yahoo-finance",
+    "alphasense",
+    "alphaspace"
   ]
 }

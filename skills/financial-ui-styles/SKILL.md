@@ -1,13 +1,13 @@
 ---
 name: financial-ui-styles
-description: Use when building any financial UI to select a visual aesthetic — Bloomberg-style pro terminal, TradingView-style modern pro, Robinhood-style retail, FT-style editorial, Massive/Stripe-style API dashboard, Coinbase/Binance-style crypto exchange, TastyTrade-style options pro, Wise-style retail light, Uniswap-style DeFi, or iOS Stocks-style Apple native. Loads AFTER `financial-ui-patterns` (which handles correctness). Read when user says "make it look like X" or specifies a brand/style direction.
+description: Use when building any financial UI to select a visual aesthetic — Bloomberg-style pro terminal, TradingView-style modern pro, Robinhood-style retail, FT-style editorial, Massive/Stripe-style API dashboard, Coinbase/Binance-style crypto exchange, TastyTrade-style options pro, Wise-style retail light, Uniswap-style DeFi, iOS Stocks-style Apple native, Yahoo Finance-style prosumer dark, AlphaSense-style research terminal, or AlphaSpace-style consumer terminal. Loads AFTER `financial-ui-patterns` (which handles correctness). Read when user says "make it look like X" or specifies a brand/style direction.
 ---
 
 # Financial UI Styles
 
 ## Overview
 
-Ten distinct visual styles for financial UIs. The base skill `financial-ui-patterns` handles correctness (tabular nums, semantic tokens, tick flash, accessibility). This skill handles **visual style** — the brand-flavored layer on top.
+Thirteen distinct visual styles for financial UIs. The base skill `financial-ui-patterns` handles correctness (tabular nums, semantic tokens, tick flash, accessibility). This skill handles **visual style** — the brand-flavored layer on top.
 
 **Layering:**
 ```
@@ -35,6 +35,9 @@ Match the user and product category, not the brand mood the founder asked for.
 |---|---|---|
 | Institutional / desk trader | Desktop terminal, command-line driven, max density | `pro-terminal` |
 | Pro / prosumer trader | Modern web app, dense but not terminal-dense | `modern-pro-dark` |
+| Mainstream prosumer | Chart-forward consumer market data, watchlist + multi-ticker compare | `yahoo-prosumer` |
+| Self-directed retail-pro | Multi-panel custom terminal with embedded AI agent, themed views | `alphaspace` |
+| Buy-side analyst | Document/transcript search, sentiment, AI summaries | `research-terminal` |
 | Active options trader | Strategy builder, Greeks-forward | `tasty-pro` |
 | Centralized crypto trader | Exchange (CEX), spot + perps | `crypto-exchange` |
 | Onchain / DeFi user | DEX, swap UI, wallet-connect first | `defi-native` |
@@ -60,6 +63,9 @@ If two rows fit, pick the one whose **reference product** ships the closest UX. 
 | `api-dashboard` | Massive, Stripe, Vercel, Linear | `references/api-dashboard.md` |
 | `defi-native` | Uniswap, Jupiter, Solana ecosystem | `references/defi-native.md` |
 | `apple-native` | iOS Stocks, macOS Stocks widget | `references/apple-native.md` |
+| `yahoo-prosumer` | Yahoo Finance (current redesign), Seeking Alpha, Investing.com | `references/yahoo-prosumer.md` |
+| `alphaspace` | Yahoo Finance AlphaSpace (Gold tier), TradingView desktop, Bloomberg Terminal (layout reference) | `references/alphaspace.md` |
+| `research-terminal` | AlphaSense, Visible Alpha, FactSet, Tegus | `references/research-terminal.md` |
 
 Each file ships with CSS variable token set (dark + light), typography table, density numbers, visual rules, style-specific patterns, anti-patterns, example component code, reference URLs, and verification checklist.
 
@@ -94,6 +100,15 @@ Gradients permitted (radial backgrounds, glassy panels with backdrop-blur). Satu
 
 ### apple-native — iOS Stocks, macOS Stocks widget
 Translucent surfaces, SF Pro Display + SF Pro Mono. System blur (vibrancy). Seamless light/dark transitions. Refined iOS feel. Use only for native companions or web that explicitly mimics native iOS.
+
+### yahoo-prosumer — Yahoo Finance (current redesign), Seeking Alpha, Investing.com
+Slate-blue near-black surfaces (#0E111A, not neutral). Single bright Yahoo-style blue accent. Sans throughout — tickers rendered in bold sans, not mono. Signature: single-ticker quote pages with hero price + delta + after-hours + OHLC stats + news strip. Multi-ticker compare chart secondary. Top ticker tape pinned, watchlist sidebar. 36-40px rows. Sits between Modern Pro Dark (less terminal-dense) and Retail Polish Dark (less consumer-flat).
+
+### alphaspace — Yahoo Finance AlphaSpace, TradingView desktop, Bloomberg Terminal (layout reference)
+Yahoo's premium terminal. Slate-blue surfaces with a bright green primary accent (the defining cue vs `yahoo-prosumer`'s blue). Multi-panel canvas (overview + chart + news + holdings + fundamentals coexisting). View-driven left sidebar with named themed dashboards (Banks & Credit, Macro, Crypto, AI Software, etc.) plus "My Views". First-class AI-agent rail pinned right ("Ask Yahoo Scout"-style), with suggested-prompt list — never collapsed. Two-row ticker tape (broad market + active theme). Bloomberg's workspace pattern reskinned for serious retail.
+
+### research-terminal — AlphaSense, Visible Alpha, FactSet, Tegus
+Light by default, near-white off-flat surfaces, saturated institutional blue accent. Document-first canvas — search bar always-on at top, source-type pills (10-K, Earnings Call, Press Release) on every result, and the signature yellow keyword highlights inside excerpt cards. AI summary block is a first-class component with a distinct accent rail and citation links. Sentiment shown as numeric + label (`Bullish · +0.42`), never color-only. Relaxed density (44-52px rows). Built for analysts who read for hours, not chart-watchers.
 
 ## Cross-Cutting Rules
 

@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>research-terminal · financial-ui-suite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --surface:           250 251 253;
+    --surface-elevated:  255 255 255;
+    --surface-panel:     244 246 250;
+    --surface-rail:      247 249 252;
+    --text-primary:    18 24 36;
+    --text-secondary:  78 90 110;
+    --text-muted:      140 152 170;
+    --positive:        10 138 79;
+    --negative:        200 38 50;
+    --accent:          8 60 140;
+    --accent-bright:   24 92 200;
+    --highlight:       255 230 100;
+    --border-soft:     230 234 240;
+    --border-mid:      215 220 228;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1200px; height: 630px;
+    background: rgb(var(--surface));
+    color: rgb(var(--text-primary));
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    overflow: hidden;
+  }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-weight: 500; }
+  .label { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: rgb(var(--text-muted)); font-size: 9.5px; }
+
+  /* APP HEADER */
+  .header {
+    height: 40px;
+    display: flex; align-items: center;
+    padding: 0 20px;
+    background: rgb(var(--surface-elevated));
+    border-bottom: 1px solid rgb(var(--border-soft));
+    gap: 20px;
+  }
+  .brand { display: flex; align-items: baseline; gap: 10px; }
+  .brand-name { font-weight: 800; font-size: 16px; letter-spacing: -0.015em; }
+  .brand-style { color: rgb(var(--accent)); }
+  .suite-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgb(var(--surface-panel));
+    border: 1px solid rgb(var(--border-mid));
+    border-radius: 999px; padding: 3px 9px;
+    font-size: 10.5px; font-weight: 500; color: rgb(var(--text-secondary));
+  }
+  .suite-tag .dot { width: 5px; height: 5px; border-radius: 999px; background: rgb(var(--accent)); }
+  .header-nav { display: flex; gap: 18px; font-size: 12px; font-weight: 500; color: rgb(var(--text-secondary)); }
+  .header-nav .item.active { color: rgb(var(--accent)); font-weight: 600; }
+  .header-right { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+  .h-label { letter-spacing: 0.08em; font-weight: 600; color: rgb(var(--text-muted)); font-size: 10.5px; text-transform: uppercase; }
+
+  /* SEARCH ROW */
+  .search-row { padding: 12px 20px 8px; }
+  .search {
+    height: 38px;
+    background: rgb(var(--surface-elevated));
+    border: 1.5px solid rgb(var(--accent) / 0.45);
+    border-radius: 6px;
+    box-shadow: 0 0 0 3px rgb(var(--accent) / 0.06);
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 12px;
+    font-size: 12.5px;
+  }
+  .search .icon {
+    width: 14px; height: 14px; border-radius: 999px;
+    border: 1.5px solid rgb(var(--text-muted));
+    position: relative; flex-shrink: 0;
+  }
+  .search .icon::after {
+    content: ''; position: absolute; width: 1.5px; height: 6px;
+    background: rgb(var(--text-muted)); right: -2.5px; bottom: -4px;
+    transform: rotate(-45deg); border-radius: 1px;
+  }
+  .search .token {
+    display: inline-flex; align-items: center; gap: 3px;
+    background: rgb(var(--accent) / 0.1);
+    color: rgb(var(--accent));
+    font-size: 11.5px; font-weight: 600;
+    padding: 2px 7px; border-radius: 3px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  .search .query { font-weight: 500; color: rgb(var(--text-primary)); }
+  .search .meta { margin-left: auto; font-size: 10.5px; color: rgb(var(--text-muted)); }
+  .search .meta b { color: rgb(var(--text-primary)); font-weight: 700; }
+  .search .cmd-k {
+    background: rgb(var(--surface-panel));
+    border: 1px solid rgb(var(--border-mid));
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 10px; font-weight: 600; color: rgb(var(--text-muted));
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    margin-left: 10px;
+  }
+
+  /* FILTER CHIPS */
+  .chips { padding: 0 20px 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip {
+    height: 24px; padding: 0 10px;
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgb(var(--surface-elevated));
+    border: 1px solid rgb(var(--border-mid));
+    border-radius: 999px;
+    font-size: 11px; font-weight: 500; color: rgb(var(--text-secondary));
+  }
+  .chip.active { background: rgb(var(--accent) / 0.1); color: rgb(var(--accent)); border-color: rgb(var(--accent) / 0.3); font-weight: 600; }
+  .chip .count { color: rgb(var(--text-muted)); font-weight: 400; font-variant-numeric: tabular-nums; }
+  .chip.active .count { color: rgb(var(--accent)); opacity: 0.7; }
+
+  /* BODY: results + right rail */
+  .body { padding: 0 20px; display: grid; grid-template-columns: 1fr 290px; gap: 14px; }
+
+  /* RESULTS */
+  .results { display: flex; flex-direction: column; gap: 6px; }
+
+  .result {
+    background: rgb(var(--surface-elevated));
+    border: 1px solid rgb(var(--border-soft));
+    border-radius: 6px;
+    padding: 9px 12px;
+  }
+  .result-top {
+    display: flex; align-items: center; gap: 7px; margin-bottom: 4px;
+  }
+  .result-logo {
+    width: 16px; height: 16px; border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 800; color: white;
+    letter-spacing: -0.02em;
+  }
+  .result-co { font-size: 11.5px; font-weight: 700; color: rgb(var(--text-primary)); }
+  .result-ticker { font-family: 'JetBrains Mono', ui-monospace, monospace; font-weight: 600; font-size: 10px; color: rgb(var(--text-muted)); }
+
+  .source-pill {
+    margin-left: 6px;
+    height: 17px; padding: 0 6px;
+    display: inline-flex; align-items: center;
+    font-size: 9.5px; font-weight: 700; letter-spacing: 0.03em;
+    border-radius: 3px; border: 1px solid;
+    text-transform: uppercase;
+  }
+  .src-call   { background: rgb(232 246 238); color: rgb(20 100 60); border-color: rgb(20 100 60 / 0.18); }
+  .src-filing { background: rgb(232 240 252); color: rgb(20 60 140); border-color: rgb(20 60 140 / 0.18); }
+  .src-broker { background: rgb(243 236 252); color: rgb(108 50 168); border-color: rgb(108 50 168 / 0.18); }
+  .src-news   { background: rgb(250 238 230); color: rgb(140 70 20); border-color: rgb(140 70 20 / 0.18); }
+  .src-expert { background: rgb(250 238 244); color: rgb(170 30 90); border-color: rgb(170 30 90 / 0.18); }
+
+  .sentiment {
+    margin-left: auto; display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 700; font-variant-numeric: tabular-nums;
+  }
+  .sentiment.pos { color: rgb(var(--positive)); }
+  .sentiment.neg { color: rgb(var(--negative)); }
+  .sentiment .dot { width: 5px; height: 5px; border-radius: 999px; background: currentColor; }
+
+  .result-time { font-size: 10px; color: rgb(var(--text-muted)); font-variant-numeric: tabular-nums; }
+
+  .result-headline { font-size: 11.5px; font-weight: 600; color: rgb(var(--text-primary)); margin-bottom: 3px; line-height: 1.3; }
+  .result-excerpt { font-size: 11px; line-height: 1.45; color: rgb(var(--text-secondary)); }
+  mark.hl { background: rgb(var(--highlight)); color: rgb(var(--text-primary)); font-weight: 600; padding: 0 2px; border-radius: 2px; }
+
+  .result-meta {
+    display: flex; gap: 12px; margin-top: 4px;
+    font-size: 9.5px; color: rgb(var(--text-muted));
+  }
+  .result-meta .matches { color: rgb(var(--accent)); font-weight: 600; }
+
+  /* AI SUMMARY */
+  .ai-card {
+    background: rgb(var(--surface-elevated));
+    border: 1px solid rgb(var(--border-soft));
+    border-left: 3px solid rgb(var(--accent));
+    border-radius: 6px;
+    padding: 12px 13px;
+    display: flex; flex-direction: column;
+  }
+  .ai-head { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+  .ai-head .label { color: rgb(var(--accent)); font-weight: 700; font-size: 9.5px; letter-spacing: 0.12em; }
+  .ai-head .ts { font-size: 9.5px; color: rgb(var(--text-muted)); margin-left: auto; letter-spacing: 0.04em; }
+  .ai-title { font-size: 12.5px; font-weight: 700; color: rgb(var(--text-primary)); margin-bottom: 7px; line-height: 1.3; }
+  .ai-bullets { display: flex; flex-direction: column; gap: 7px; }
+  .ai-bullet { display: flex; gap: 6px; font-size: 11px; line-height: 1.42; color: rgb(var(--text-secondary)); }
+  .ai-bullet::before { content: '▸'; color: rgb(var(--accent)); font-weight: 700; flex-shrink: 0; font-size: 9px; line-height: 1.6; }
+  .ai-bullet b { color: rgb(var(--text-primary)); font-weight: 600; }
+  .ai-bullet mark { background: rgb(var(--highlight)); color: rgb(var(--text-primary)); font-weight: 600; padding: 0 2px; border-radius: 2px; }
+  .ai-bullet .cite {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 14px; height: 13px; padding: 0 3px;
+    background: rgb(var(--accent) / 0.1);
+    color: rgb(var(--accent));
+    font-size: 8.5px; font-weight: 700;
+    border-radius: 2px;
+    margin-left: 2px;
+    vertical-align: 1px;
+  }
+  .ai-foot {
+    margin-top: 10px; padding-top: 8px;
+    border-top: 1px solid rgb(var(--border-soft));
+    display: flex; align-items: center; gap: 10px;
+    font-size: 10px; color: rgb(var(--accent)); font-weight: 600;
+  }
+
+  .sent-card {
+    margin-top: 8px;
+    background: rgb(var(--surface-elevated));
+    border: 1px solid rgb(var(--border-soft));
+    border-radius: 6px;
+    padding: 10px 13px;
+  }
+  .sent-row { display: flex; justify-content: space-between; align-items: center; }
+  .sent-label { font-size: 9.5px; color: rgb(var(--text-muted)); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+  .sent-value { font-size: 13px; font-weight: 700; }
+  .sent-bar {
+    margin-top: 7px;
+    height: 5px; background: rgb(var(--border-soft)); border-radius: 999px;
+    position: relative;
+  }
+  .sent-fill {
+    position: absolute; left: 50%; top: 0; bottom: 0; width: 27%;
+    background: rgb(var(--positive));
+    border-radius: 999px;
+  }
+  .sent-zero { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: rgb(var(--text-muted) / 0.5); }
+  .sent-scale { display: flex; justify-content: space-between; margin-top: 5px; font-size: 9px; color: rgb(var(--text-muted)); letter-spacing: 0.04em; font-weight: 600; }
+
+  /* FOOTER */
+  .footer {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 8px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10px; color: rgb(var(--text-muted));
+    background: rgb(var(--surface));
+    border-top: 1px solid rgb(var(--border-soft));
+  }
+  .footer .right { color: rgb(var(--text-secondary)); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="brand">
+    <span class="brand-name"><span class="brand-style">research-terminal</span></span>
+    <span class="suite-tag"><span class="dot"></span>financial-ui-suite · v0.4</span>
+  </div>
+  <nav class="header-nav">
+    <span class="item active">Search</span>
+    <span class="item">Companies</span>
+    <span class="item">Documents</span>
+    <span class="item">Notes</span>
+    <span class="item">Alerts</span>
+  </nav>
+  <div class="header-right">
+    <span class="h-label">Buy-side research · light · document-first</span>
+  </div>
+</div>
+
+<!-- Search -->
+<div class="search-row">
+  <div class="search">
+    <span class="icon"></span>
+    <span class="token">company:NVDA</span>
+    <span class="token">source:transcript,filing,broker</span>
+    <span class="query">data center revenue Blackwell guidance</span>
+    <span class="meta"><b>12,418</b> docs · ranked by relevance · sentiment-weighted</span>
+    <span class="cmd-k">⌘K</span>
+  </div>
+</div>
+
+<!-- Filter chips -->
+<div class="chips">
+  <span class="chip active">All <span class="count">12,418</span></span>
+  <span class="chip">Earnings Calls <span class="count">184</span></span>
+  <span class="chip">Filings <span class="count">2,310</span></span>
+  <span class="chip">Press Releases <span class="count">4,602</span></span>
+  <span class="chip">Broker Notes <span class="count">1,224</span></span>
+  <span class="chip">Expert Calls <span class="count">412</span></span>
+  <span class="chip">News <span class="count">3,686</span></span>
+  <span class="chip">Last 90d</span>
+  <span class="chip">Bullish only</span>
+</div>
+
+<!-- Body -->
+<div class="body">
+  <div class="results">
+    <article class="result">
+      <div class="result-top">
+        <div class="result-logo" style="background: rgb(118 185 0);">N</div>
+        <span class="result-co">NVIDIA Corporation</span>
+        <span class="result-ticker">NASDAQ:NVDA</span>
+        <span class="source-pill src-call">Earnings Call</span>
+        <span class="sentiment pos"><span class="dot"></span>+0.68</span>
+        <span class="result-time">May 22, 2026</span>
+      </div>
+      <div class="result-headline">Q1 FY27 Earnings Call — Prepared Remarks · Jensen Huang, CEO</div>
+      <p class="result-excerpt">"We saw <mark class="hl">data center revenue</mark> grow to a record $39.1 billion, up 73% year-over-year, driven by accelerating demand for our <mark class="hl">Blackwell</mark> platform across hyperscale customers, with full-year <mark class="hl">guidance</mark> raised to $51 billion..."</p>
+      <div class="result-meta"><span>p. 4 of 28</span><span class="matches">3 matches in this document</span><span>View document →</span></div>
+    </article>
+
+    <article class="result">
+      <div class="result-top">
+        <div class="result-logo" style="background: rgb(184 41 47);">M</div>
+        <span class="result-co">Morgan Stanley</span>
+        <span class="result-ticker">on NVDA</span>
+        <span class="source-pill src-broker">Broker Note</span>
+        <span class="sentiment pos"><span class="dot"></span>+0.74</span>
+        <span class="result-time">May 23, 2026</span>
+      </div>
+      <div class="result-headline">NVDA — Raising PT to $185 on Sustained Blackwell Demand</div>
+      <p class="result-excerpt">"We are raising our price target to $185 (from $148) following Q1 FY27 results. We see <mark class="hl">data center revenue</mark> sustaining a $40B+ quarterly run-rate through FY28, with <mark class="hl">Blackwell</mark> shipments..."</p>
+      <div class="result-meta"><span>22 pages</span><span class="matches">4 matches in this document</span><span>View document →</span></div>
+    </article>
+
+    <article class="result">
+      <div class="result-top">
+        <div class="result-logo" style="background: rgb(40 80 200);">N</div>
+        <span class="result-co">NVIDIA Corporation</span>
+        <span class="result-ticker">NASDAQ:NVDA</span>
+        <span class="source-pill src-filing">10-Q</span>
+        <span class="sentiment pos"><span class="dot"></span>+0.41</span>
+        <span class="result-time">May 28, 2026</span>
+      </div>
+      <div class="result-headline">Form 10-Q · Quarterly Report · Q1 FY27</div>
+      <p class="result-excerpt">"Total revenue for the quarter was $44.5B, of which <mark class="hl">data center</mark> accounted for $39.1B (88%). Management's full-year revenue <mark class="hl">guidance</mark> was raised to $51B based on order visibility through Q3..."</p>
+      <div class="result-meta"><span>p. 22 of 84</span><span class="matches">5 matches in this document</span><span>View document →</span></div>
+    </article>
+
+    <article class="result">
+      <div class="result-top">
+        <div class="result-logo" style="background: rgb(80 90 105);">T</div>
+        <span class="result-co">Tegus Expert Call</span>
+        <span class="result-ticker">NVDA supply chain</span>
+        <span class="source-pill src-expert">Expert Call</span>
+        <span class="sentiment pos"><span class="dot"></span>+0.52</span>
+        <span class="result-time">May 30, 2026</span>
+      </div>
+      <div class="result-headline">Former TSMC Supply Chain Director on <mark class="hl">Blackwell</mark> Ramp</div>
+      <p class="result-excerpt">"<mark class="hl">Blackwell</mark> CoWoS packaging capacity at TSMC is now running at 2.4× the rate of H100 at the same point in its ramp. <mark class="hl">Data center</mark> ASPs are 38% higher per unit..."</p>
+      <div class="result-meta"><span>32 min transcript</span><span class="matches">3 matches in this document</span><span>View document →</span></div>
+    </article>
+  </div>
+
+  <!-- Right rail: AI summary + sentiment -->
+  <div>
+    <div class="ai-card">
+      <div class="ai-head">
+        <span class="label">AI Summary · NVDA</span>
+        <span class="ts">JUN 20 · 4 srcs</span>
+      </div>
+      <div class="ai-title">Q1 FY27 — what shifted in the narrative</div>
+      <div class="ai-bullets">
+        <div class="ai-bullet"><span><b>Blackwell ramp</b> running "well ahead" of plan; $39.1B <mark>data center revenue</mark>, +73% YoY <span class="cite">1</span></span></div>
+        <div class="ai-bullet"><span>Data center mix climbed to <b>88%</b> of revenue, +600 bps QoQ <span class="cite">2</span></span></div>
+        <div class="ai-bullet"><span>Sovereign AI deals contributed ≈<b>$4.5B</b> committed orders <span class="cite">3</span></span></div>
+        <div class="ai-bullet"><span>Full-year <mark>guidance</mark> raised to <b>$51B</b>; consensus was $48.2B <span class="cite">4</span></span></div>
+      </div>
+      <div class="ai-foot">
+        <span>Show sources →</span>
+        <span style="margin-left: auto; color: rgb(var(--text-muted)); font-weight: 500;">Regenerate</span>
+      </div>
+    </div>
+
+    <div class="sent-card">
+      <div class="sent-row">
+        <span class="sent-label">Aggregate · 30d</span>
+        <span class="sent-value sentiment pos"><span class="dot"></span>+0.54</span>
+      </div>
+      <div class="sent-bar">
+        <div class="sent-fill"></div>
+        <div class="sent-zero"></div>
+      </div>
+      <div class="sent-scale">
+        <span>BEARISH</span><span>NEUTRAL</span><span>BULLISH</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div>Light surfaces · yellow keyword highlights · 5 source types · AI summary + sentiment rail · 4 results visible at OG zoom</div>
+  <div class="right">github.com/rgourley/financial-ui-suite</div>
+</div>
+
+</body>
+</html>
