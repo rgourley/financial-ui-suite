@@ -4,6 +4,8 @@ All notable changes to this plugin. Newest first.
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-06-20
+
 ### Changed
 - Renamed `financial-ui-personas` skill to `financial-ui-styles` (folder, plugin metadata, all prose). `Style` replaces `Persona` throughout. Reinstall required.
 - Style Index in styles SKILL.md dropped the stale Status column (all 10 styles ship the same depth).
@@ -13,6 +15,11 @@ All notable changes to this plugin. Newest first.
 - README adds a Scope section clarifying React + Tailwind in examples; rules are framework-agnostic.
 
 ### Added
+- `financial-ui-styles/references/yahoo-prosumer.md` — Yahoo Finance (current redesign) aesthetic. Slate-blue dark surfaces, single-ticker quote pages, ticker tape, watchlist sidebar. Sits between Modern Pro Dark and Retail Polish Dark.
+- `financial-ui-styles/references/research-terminal.md` — AlphaSense-style buy-side research aesthetic. Light by default, document-first, always-on search, source-type pills, yellow keyword highlights inside excerpts, first-class AI summary block, sentiment as numeric + label.
+- `financial-ui-styles/references/alphaspace.md` — Yahoo's new AlphaSpace terminal. Multi-panel custom dashboards, bright green primary accent, view-driven left sidebar of themed dashboards, first-class AI agent rail ("Ask Yahoo Scout"), two-row ticker tape. Bloomberg workspace pattern reskinned for serious retail.
+- `examples/og-images/` — 1200×630 OG cards for `yahoo-prosumer`, `research-terminal`, and `alphaspace` (HTML source + rendered PNG).
+- Style count in plugin description and styles SKILL.md updated from 10 → 13. Picker table, style index, and summaries updated to include all three.
 - `financial-ui-patterns/references/loading-and-skeletons.md` — skeleton shapes, shimmer rules, reconnect treatment.
 - `financial-ui-patterns/references/empty-and-error-states.md` — empty positions/orders, rejected/closed/rate-limited surfaces.
 - `financial-ui-patterns/references/timestamps-and-timezones.md` — TZ display, "as of" stamps, ms precision rules.
