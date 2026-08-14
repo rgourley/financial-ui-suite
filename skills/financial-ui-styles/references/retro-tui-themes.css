@@ -1,0 +1,247 @@
+/*
+ * retro-tui — phosphor CRT theme tokens (22 themes, default: amber)
+ * Each token is an "R G B" triple; use as rgb(var(--surface)). Dark themes carry --glow bloom; light themes set it to none.
+ * Palettes adapted from the Gloomberb project (MIT, (c) 2026 Gloomberb Contributors).
+ */
+
+/* Amber — Classic amber-on-black terminal */
+[data-theme="amber"] {
+  --surface: 0 0 0; --surface-panel: 10 10 20; --surface-elevated: 10 10 20; --surface-hover: 26 58 92;
+  --text-primary: 255 136 0; --text-bright: 255 170 0; --text-secondary: 136 102 34; --text-muted: 85 85 85;
+  --positive: 0 204 102; --negative: 255 51 51; --neutral: 136 136 136; --warning: 255 170 0;
+  --accent: 255 136 0; --border: 26 58 92; --border-focused: 255 136 0;
+  --header: 0 68 170; --header-text: 255 255 255; --selected: 26 58 92; --selected-text: 255 170 0;
+  --command-bg: 17 17 34; --command-border: 255 136 0;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Green Phosphor — Retro green CRT monitor */
+[data-theme="green"] {
+  --surface: 0 0 0; --surface-panel: 0 17 0; --surface-elevated: 0 17 0; --surface-hover: 0 51 0;
+  --text-primary: 0 204 0; --text-bright: 0 255 0; --text-secondary: 0 102 0; --text-muted: 68 68 68;
+  --positive: 0 255 102; --negative: 255 68 68; --neutral: 102 102 102; --warning: 204 204 0;
+  --accent: 0 255 0; --border: 0 68 0; --border-focused: 0 255 0;
+  --header: 0 51 0; --header-text: 0 255 0; --selected: 0 51 0; --selected-text: 0 255 0;
+  --command-bg: 0 17 0; --command-border: 0 204 0;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Cyan — Cool cyan-on-black terminal */
+[data-theme="cyan"] {
+  --surface: 0 0 0; --surface-panel: 0 10 10; --surface-elevated: 0 10 10; --surface-hover: 0 42 42;
+  --text-primary: 0 187 187; --text-bright: 0 255 255; --text-secondary: 0 102 102; --text-muted: 68 68 68;
+  --positive: 0 255 136; --negative: 255 68 68; --neutral: 102 102 102; --warning: 221 204 0;
+  --accent: 0 221 221; --border: 0 51 51; --border-focused: 0 221 221;
+  --header: 0 34 34; --header-text: 0 255 255; --selected: 0 42 42; --selected-text: 0 255 255;
+  --command-bg: 0 10 10; --command-border: 0 187 187;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Red Phosphor — Crimson red-on-black terminal */
+[data-theme="red"] {
+  --surface: 0 0 0; --surface-panel: 10 0 0; --surface-elevated: 10 0 0; --surface-hover: 42 0 0;
+  --text-primary: 204 34 34; --text-bright: 255 68 68; --text-secondary: 102 17 17; --text-muted: 68 68 68;
+  --positive: 68 204 68; --negative: 255 102 102; --neutral: 102 102 102; --warning: 221 170 0;
+  --accent: 255 34 34; --border: 51 0 0; --border-focused: 255 34 34;
+  --header: 34 0 0; --header-text: 255 51 51; --selected: 42 0 0; --selected-text: 255 68 68;
+  --command-bg: 10 0 0; --command-border: 204 34 34;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Blue Phosphor — Electric blue-on-black terminal */
+[data-theme="blue"] {
+  --surface: 0 0 0; --surface-panel: 0 0 10; --surface-elevated: 0 0 10; --surface-hover: 0 17 68;
+  --text-primary: 51 119 238; --text-bright: 102 170 255; --text-secondary: 26 58 119; --text-muted: 68 68 68;
+  --positive: 0 204 102; --negative: 255 68 68; --neutral: 102 102 102; --warning: 221 170 0;
+  --accent: 68 136 255; --border: 0 0 68; --border-focused: 68 136 255;
+  --header: 0 0 51; --header-text: 68 136 255; --selected: 0 17 68; --selected-text: 102 170 255;
+  --command-bg: 0 0 10; --command-border: 51 119 238;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Purple Phosphor — Violet purple-on-black terminal */
+[data-theme="purple"] {
+  --surface: 0 0 0; --surface-panel: 8 0 8; --surface-elevated: 8 0 8; --surface-hover: 34 0 51;
+  --text-primary: 153 68 221; --text-bright: 204 119 255; --text-secondary: 85 34 136; --text-muted: 68 68 68;
+  --positive: 68 221 102; --negative: 255 68 68; --neutral: 102 102 102; --warning: 221 170 0;
+  --accent: 187 85 255; --border: 34 0 51; --border-focused: 187 85 255;
+  --header: 26 0 40; --header-text: 187 85 255; --selected: 34 0 51; --selected-text: 204 119 255;
+  --command-bg: 8 0 8; --command-border: 153 68 221;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Hot Pink — Neon pink-on-black terminal */
+[data-theme="pink"] {
+  --surface: 0 0 0; --surface-panel: 10 0 6; --surface-elevated: 10 0 6; --surface-hover: 42 0 24;
+  --text-primary: 221 51 153; --text-bright: 255 102 187; --text-secondary: 119 17 85; --text-muted: 68 68 68;
+  --positive: 68 221 102; --negative: 255 85 85; --neutral: 102 102 102; --warning: 221 170 0;
+  --accent: 255 68 170; --border: 51 0 26; --border-focused: 255 68 170;
+  --header: 34 0 15; --header-text: 255 68 170; --selected: 42 0 24; --selected-text: 255 102 187;
+  --command-bg: 10 0 6; --command-border: 221 51 153;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* White Phosphor — Clean white-on-black terminal */
+[data-theme="white"] {
+  --surface: 0 0 0; --surface-panel: 10 10 10; --surface-elevated: 10 10 10; --surface-hover: 34 34 34;
+  --text-primary: 204 204 204; --text-bright: 255 255 255; --text-secondary: 102 102 102; --text-muted: 68 68 68;
+  --positive: 0 204 102; --negative: 255 51 51; --neutral: 136 136 136; --warning: 221 170 0;
+  --accent: 255 255 255; --border: 51 51 51; --border-focused: 255 255 255;
+  --header: 26 26 26; --header-text: 255 255 255; --selected: 34 34 34; --selected-text: 255 255 255;
+  --command-bg: 10 10 10; --command-border: 204 204 204;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Paper — Warm light terminal palette (light) */
+[data-theme="paper"] {
+  --surface: 247 243 232; --surface-panel: 255 250 240; --surface-elevated: 255 250 240; --surface-hover: 234 209 171;
+  --text-primary: 47 42 35; --text-bright: 23 19 15; --text-secondary: 95 85 72; --text-muted: 119 107 93;
+  --positive: 47 125 74; --negative: 179 54 48; --neutral: 110 98 86; --warning: 148 98 0;
+  --accent: 160 90 44; --border: 216 205 183; --border-focused: 160 90 44;
+  --header: 234 220 196; --header-text: 122 63 31; --selected: 234 209 171; --selected-text: 33 24 16;
+  --command-bg: 255 247 232; --command-border: 160 90 44;
+  --glow: 0 0 0; --radius-md: 0; --radius-lg: 0;
+}
+
+/* GitHub Light — Clean light code palette (light) */
+[data-theme="github-light"] {
+  --surface: 255 255 255; --surface-panel: 246 248 250; --surface-elevated: 246 248 250; --surface-hover: 221 244 255;
+  --text-primary: 36 41 47; --text-bright: 11 18 32; --text-secondary: 87 96 106; --text-muted: 110 119 129;
+  --positive: 26 127 55; --negative: 207 34 46; --neutral: 87 96 106; --warning: 154 103 0;
+  --accent: 9 105 218; --border: 208 215 222; --border-focused: 9 105 218;
+  --header: 234 238 242; --header-text: 9 105 218; --selected: 221 244 255; --selected-text: 11 18 32;
+  --command-bg: 246 248 250; --command-border: 9 105 218;
+  --glow: 0 0 0; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Solarized Light — Ethan Schoonover's light palette (light) */
+[data-theme="solarized-light"] {
+  --surface: 253 246 227; --surface-panel: 238 232 213; --surface-elevated: 238 232 213; --surface-hover: 220 230 214;
+  --text-primary: 88 110 117; --text-bright: 7 54 66; --text-secondary: 101 123 131; --text-muted: 124 138 138;
+  --positive: 133 153 0; --negative: 220 50 47; --neutral: 101 123 131; --warning: 181 137 0;
+  --accent: 181 137 0; --border: 147 161 161; --border-focused: 181 137 0;
+  --header: 230 223 201; --header-text: 38 139 210; --selected: 220 230 214; --selected-text: 7 54 66;
+  --command-bg: 238 232 213; --command-border: 181 137 0;
+  --glow: 0 0 0; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Gruvbox Light — Retro earthy light palette (light) */
+[data-theme="gruvbox-light"] {
+  --surface: 251 241 199; --surface-panel: 242 229 188; --surface-elevated: 242 229 188; --surface-hover: 213 196 161;
+  --text-primary: 60 56 54; --text-bright: 40 40 40; --text-secondary: 102 92 84; --text-muted: 124 111 100;
+  --positive: 121 116 14; --negative: 157 0 6; --neutral: 102 92 84; --warning: 181 118 20;
+  --accent: 175 58 3; --border: 213 196 161; --border-focused: 175 58 3;
+  --header: 235 219 178; --header-text: 175 58 3; --selected: 213 196 161; --selected-text: 40 40 40;
+  --command-bg: 242 229 188; --command-border: 175 58 3;
+  --glow: 0 0 0; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Nord Light — Soft arctic light palette (light) */
+[data-theme="nord-light"] {
+  --surface: 236 239 244; --surface-panel: 229 233 240; --surface-elevated: 229 233 240; --surface-hover: 200 213 232;
+  --text-primary: 46 52 64; --text-bright: 31 37 48; --text-secondary: 76 86 106; --text-muted: 104 114 134;
+  --positive: 75 127 54; --negative: 191 97 106; --neutral: 76 86 106; --warning: 154 117 0;
+  --accent: 94 129 172; --border: 216 222 233; --border-focused: 94 129 172;
+  --header: 216 222 233; --header-text: 94 129 172; --selected: 200 213 232; --selected-text: 31 37 48;
+  --command-bg: 229 233 240; --command-border: 94 129 172;
+  --glow: 0 0 0; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Tokyo Night — Cool blue-purple palette */
+[data-theme="tokyo"] {
+  --surface: 26 27 38; --surface-panel: 22 22 30; --surface-elevated: 22 22 30; --surface-hover: 40 52 87;
+  --text-primary: 192 202 245; --text-bright: 255 255 255; --text-secondary: 86 95 137; --text-muted: 68 75 106;
+  --positive: 158 206 106; --negative: 247 118 142; --neutral: 86 95 137; --warning: 224 175 104;
+  --accent: 122 162 247; --border: 59 66 97; --border-focused: 122 162 247;
+  --header: 36 40 59; --header-text: 122 162 247; --selected: 40 52 87; --selected-text: 192 202 245;
+  --command-bg: 22 22 30; --command-border: 122 162 247;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Solarized Dark — Ethan Schoonover's classic palette */
+[data-theme="solarized"] {
+  --surface: 0 43 54; --surface-panel: 7 54 66; --surface-elevated: 7 54 66; --surface-hover: 10 74 92;
+  --text-primary: 131 148 150; --text-bright: 253 246 227; --text-secondary: 88 110 117; --text-muted: 101 123 131;
+  --positive: 133 153 0; --negative: 220 50 47; --neutral: 101 123 131; --warning: 181 137 0;
+  --accent: 181 137 0; --border: 88 110 117; --border-focused: 181 137 0;
+  --header: 7 54 66; --header-text: 38 139 210; --selected: 10 74 92; --selected-text: 181 137 0;
+  --command-bg: 0 43 54; --command-border: 38 139 210;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Dracula — Popular dark theme with vivid colors */
+[data-theme="dracula"] {
+  --surface: 40 42 54; --surface-panel: 33 34 44; --surface-elevated: 33 34 44; --surface-hover: 68 71 90;
+  --text-primary: 248 248 242; --text-bright: 255 255 255; --text-secondary: 98 114 164; --text-muted: 98 114 164;
+  --positive: 80 250 123; --negative: 255 85 85; --neutral: 98 114 164; --warning: 241 250 140;
+  --accent: 189 147 249; --border: 68 71 90; --border-focused: 189 147 249;
+  --header: 68 71 90; --header-text: 189 147 249; --selected: 68 71 90; --selected-text: 248 248 242;
+  --command-bg: 33 34 44; --command-border: 189 147 249;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Nord — Arctic, north-bluish palette */
+[data-theme="nord"] {
+  --surface: 46 52 64; --surface-panel: 59 66 82; --surface-elevated: 59 66 82; --surface-hover: 76 86 106;
+  --text-primary: 216 222 233; --text-bright: 236 239 244; --text-secondary: 76 86 106; --text-muted: 76 86 106;
+  --positive: 163 190 140; --negative: 191 97 106; --neutral: 76 86 106; --warning: 235 203 139;
+  --accent: 136 192 208; --border: 76 86 106; --border-focused: 136 192 208;
+  --header: 59 66 82; --header-text: 136 192 208; --selected: 76 86 106; --selected-text: 236 239 244;
+  --command-bg: 46 52 64; --command-border: 136 192 208;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Monokai — Warm, high-contrast classic */
+[data-theme="monokai"] {
+  --surface: 39 40 34; --surface-panel: 30 31 28; --surface-elevated: 30 31 28; --surface-hover: 73 72 62;
+  --text-primary: 248 248 242; --text-bright: 255 255 255; --text-secondary: 117 113 94; --text-muted: 117 113 94;
+  --positive: 166 226 46; --negative: 249 38 114; --neutral: 117 113 94; --warning: 230 219 116;
+  --accent: 249 38 114; --border: 73 72 62; --border-focused: 249 38 114;
+  --header: 73 72 62; --header-text: 230 219 116; --selected: 73 72 62; --selected-text: 248 248 242;
+  --command-bg: 30 31 28; --command-border: 249 38 114;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Catppuccin Mocha — Soothing pastel theme */
+[data-theme="catppuccin"] {
+  --surface: 30 30 46; --surface-panel: 24 24 37; --surface-elevated: 24 24 37; --surface-hover: 62 63 86;
+  --text-primary: 205 214 244; --text-bright: 255 255 255; --text-secondary: 88 91 112; --text-muted: 108 112 134;
+  --positive: 166 227 161; --negative: 243 139 168; --neutral: 108 112 134; --warning: 249 226 175;
+  --accent: 203 166 247; --border: 69 71 90; --border-focused: 203 166 247;
+  --header: 49 50 68; --header-text: 203 166 247; --selected: 62 63 86; --selected-text: 205 214 244;
+  --command-bg: 24 24 37; --command-border: 203 166 247;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Gruvbox Dark — Retro earthy tones */
+[data-theme="gruvbox"] {
+  --surface: 40 40 40; --surface-panel: 29 32 33; --surface-elevated: 29 32 33; --surface-hover: 60 56 54;
+  --text-primary: 235 219 178; --text-bright: 251 241 199; --text-secondary: 146 131 116; --text-muted: 102 92 84;
+  --positive: 184 187 38; --negative: 251 73 52; --neutral: 146 131 116; --warning: 250 189 47;
+  --accent: 254 128 25; --border: 80 73 69; --border-focused: 254 128 25;
+  --header: 60 56 54; --header-text: 250 189 47; --selected: 60 56 54; --selected-text: 235 219 178;
+  --command-bg: 29 32 33; --command-border: 254 128 25;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Rose Pine — Muted, elegant dark theme */
+[data-theme="rosepine"] {
+  --surface: 25 23 36; --surface-panel: 31 29 46; --surface-elevated: 31 29 46; --surface-hover: 51 47 74;
+  --text-primary: 224 222 244; --text-bright: 255 255 255; --text-secondary: 110 106 134; --text-muted: 82 79 103;
+  --positive: 49 116 143; --negative: 235 111 146; --neutral: 110 106 134; --warning: 246 193 119;
+  --accent: 196 167 231; --border: 64 61 82; --border-focused: 196 167 231;
+  --header: 38 35 58; --header-text: 196 167 231; --selected: 51 47 74; --selected-text: 224 222 244;
+  --command-bg: 31 29 46; --command-border: 196 167 231;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}
+
+/* Midnight Blue */
+[data-theme="midnight"] {
+  --surface: 0 0 34; --surface-panel: 0 0 51; --surface-elevated: 0 0 51; --surface-hover: 0 34 85;
+  --text-primary: 204 221 255; --text-bright: 255 255 255; --text-secondary: 102 136 187; --text-muted: 68 85 119;
+  --positive: 0 204 102; --negative: 255 51 51; --neutral: 102 136 187; --warning: 255 153 0;
+  --accent: 255 102 0; --border: 0 51 102; --border-focused: 255 102 0;
+  --header: 0 17 68; --header-text: 255 102 0; --selected: 0 34 85; --selected-text: 255 255 255;
+  --command-bg: 0 0 51; --command-border: 255 102 0;
+  --glow: 0 0 4px; --radius-md: 0; --radius-lg: 0;
+}

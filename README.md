@@ -6,7 +6,7 @@
 
 A Claude Code plugin for building financial products that follow the patterns and rules every serious trading product ships. Visual rules (tokens, typography, density, alignment), interaction logic (tick-flash, focus states, streaming-state lifecycle, throttling, gestures), structural conventions (order book direction, fallback chains, responsive table strategies), accessibility (color-blind safety, keyboard navigation, screen readers), and mobile patterns (bottom sheets, safe areas, touch interactions).
 
-Then pick a visual aesthetic from 13 styles modeled on what Bloomberg, TradingView, Kraken Pro, Robinhood, Coinbase Advanced, the Financial Times, Massive, Wise, TastyTrade, Uniswap, iOS Stocks, Yahoo Finance, AlphaSense, and Yahoo's new AlphaSpace terminal actually ship.
+Then pick a visual aesthetic from 14 styles modeled on what Bloomberg, TradingView, Kraken Pro, Robinhood, Coinbase Advanced, the Financial Times, Massive, Wise, TastyTrade, Uniswap, iOS Stocks, Yahoo Finance, AlphaSense, Yahoo's new AlphaSpace terminal, and retro-computing terminals actually ship.
 
 This plugin covers UI, UX, interaction logic, and the structure underneath.
 
@@ -54,10 +54,21 @@ skills/
         ├── yahoo-prosumer.md           Yahoo Finance (current redesign), Seeking Alpha, Investing.com
         ├── alphaspace.md               Yahoo Finance AlphaSpace, TradingView desktop
         ├── research-terminal.md        AlphaSense, Visible Alpha, FactSet, Tegus
+        ├── retro-tui.md                Gloomberb, lazygit, k9s, btop
         └── charts-and-indicators.md    Per-style chart treatments
 ```
 <img width="1130" height="370" alt="Screenshot 2026-06-02 at 11 04 37 AM" src="https://github.com/user-attachments/assets/44bcc8d0-3105-44e3-992c-c7002f6d91f8" />
 
+
+## retro-tui — terminal TUI style
+
+A clean, tiled terminal aesthetic inspired by [Gloomberb](https://github.com/gloom-sh/gloomberb): muted monospace, `::` panel headers, traffic-light window chrome, green/red only on values. Ships 22 swappable phosphor themes (`references/retro-tui-themes.css`) and an optional CRT mode. Open [`examples/retro-tui.html`](examples/retro-tui.html) to switch themes and toggle CRT live.
+
+![retro-tui, clean default](examples/retro-tui-clean.png)
+
+CRT mode (scanlines + phosphor bloom on an amber theme), off by default:
+
+![retro-tui, CRT mode](examples/retro-tui-crt.png)
 
 ## How it composes
 

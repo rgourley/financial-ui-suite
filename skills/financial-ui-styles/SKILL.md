@@ -1,13 +1,13 @@
 ---
 name: financial-ui-styles
-description: Use when building any financial UI to select a visual aesthetic — Bloomberg-style pro terminal, TradingView-style modern pro, Robinhood-style retail, FT-style editorial, Massive/Stripe-style API dashboard, Coinbase/Binance-style crypto exchange, TastyTrade-style options pro, Wise-style retail light, Uniswap-style DeFi, iOS Stocks-style Apple native, Yahoo Finance-style prosumer dark, AlphaSense-style research terminal, or AlphaSpace-style consumer terminal. Loads AFTER `financial-ui-patterns` (which handles correctness). Read when user says "make it look like X" or specifies a brand/style direction.
+description: Use when building any financial UI to select a visual aesthetic — Bloomberg-style pro terminal, TradingView-style modern pro, Robinhood-style retail, FT-style editorial, Massive/Stripe-style API dashboard, Coinbase/Binance-style crypto exchange, TastyTrade-style options pro, Wise-style retail light, Uniswap-style DeFi, iOS Stocks-style Apple native, Yahoo Finance-style prosumer dark, AlphaSense-style research terminal, AlphaSpace-style consumer terminal, or Gloomberb-style terminal TUI. Loads AFTER `financial-ui-patterns` (which handles correctness). Read when user says "make it look like X" or specifies a brand/style direction.
 ---
 
 # Financial UI Styles
 
 ## Overview
 
-Thirteen distinct visual styles for financial UIs. The base skill `financial-ui-patterns` handles correctness (tabular nums, semantic tokens, tick flash, accessibility). This skill handles **visual style** — the brand-flavored layer on top.
+Fourteen distinct visual styles for financial UIs. The base skill `financial-ui-patterns` handles correctness (tabular nums, semantic tokens, tick flash, accessibility). This skill handles **visual style** — the brand-flavored layer on top.
 
 **Layering:**
 ```
@@ -46,6 +46,7 @@ Match the user and product category, not the brand mood the founder asked for.
 | News / analysis reader | Editorial layout with embedded market data | `editorial-financial` |
 | Developer / admin | API console, dashboard, docs-adjacent | `api-dashboard` |
 | iOS user | Native companion or web that mimics native iOS | `apple-native` |
+| Indie / developer trader | Tiled multi-pane terminal (TUI) dashboard, muted, theme-swappable | `retro-tui` |
 
 If two rows fit, pick the one whose **reference product** ships the closest UX. Don't blend.
 
@@ -66,6 +67,7 @@ If two rows fit, pick the one whose **reference product** ships the closest UX. 
 | `yahoo-prosumer` | Yahoo Finance (current redesign), Seeking Alpha, Investing.com | `references/yahoo-prosumer.md` |
 | `alphaspace` | Yahoo Finance AlphaSpace (Gold tier), TradingView desktop, Bloomberg Terminal (layout reference) | `references/alphaspace.md` |
 | `research-terminal` | AlphaSense, Visible Alpha, FactSet, Tegus | `references/research-terminal.md` |
+| `retro-tui` | Gloomberb, lazygit, k9s, btop | `references/retro-tui.md` |
 
 Each file ships with CSS variable token set (dark + light), typography table, density numbers, visual rules, style-specific patterns, anti-patterns, example component code, reference URLs, and verification checklist.
 
@@ -109,6 +111,9 @@ Yahoo's premium terminal. Slate-blue surfaces with a bright green primary accent
 
 ### research-terminal — AlphaSense, Visible Alpha, FactSet, Tegus
 Light by default, near-white off-flat surfaces, saturated institutional blue accent. Document-first canvas — search bar always-on at top, source-type pills (10-K, Earnings Call, Press Release) on every result, and the signature yellow keyword highlights inside excerpt cards. AI summary block is a first-class component with a distinct accent rail and citation links. Sentiment shown as numeric + label (`Bullish · +0.42`), never color-only. Relaxed density (44-52px rows). Built for analysts who read for hours, not chart-watchers.
+
+### retro-tui — Gloomberb, lazygit, k9s, btop
+Clean terminal UI. Near-black ground, muted white/grey mono text, green/red only on values, hairline dividers, `:: Title` panel headers, tiled multi-pane grid with traffic-light window chrome. Swappable phosphor palette (22 themes) plus an optional CRT mode (scanlines + phosphor bloom) that stays **off by default**. Warm "Paper" light variant. The indie/developer cousin of `pro-terminal` — same density, muted instead of institutional. Palettes adapted from Gloomberb (MIT).
 
 ## Cross-Cutting Rules
 
