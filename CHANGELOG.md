@@ -4,6 +4,15 @@ All notable changes to this plugin. Newest first.
 
 ## [Unreleased]
 
+### Changed
+- Marketplace renamed from `financial-ui-suite-dev` to `financial-ui-suite`. Reinstall with `financial-ui-suite@financial-ui-suite`.
+- Marketplace and plugin versions both read 0.4.0. Style counts read 14.
+- README install steps use the GitHub form. Unreproducible TDD claim removed. Personal-project note added to the trademark notice.
+- Keyword `polygon` replaced with `massive`.
+
+### Added
+- `.codex-plugin/plugin.json` for Codex repo and local marketplaces.
+
 ## [0.4.0] — 2026-06-20
 
 ### Changed

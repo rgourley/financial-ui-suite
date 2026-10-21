@@ -103,17 +103,18 @@ The two skills capture the specific patterns Bloomberg, Kraken, TradingView, Coi
 **From GitHub:**
 
 ```bash
-git clone https://github.com/rgourley/financial-ui-suite.git
-claude plugin marketplace add ./financial-ui-suite
-/plugin install financial-ui-suite@financial-ui-suite-dev
+claude plugin marketplace add rgourley/financial-ui-suite
+claude plugin install financial-ui-suite@financial-ui-suite
 ```
 
 **From a local checkout:**
 
 ```bash
 claude plugin marketplace add /path/to/financial-ui-suite
-/plugin install financial-ui-suite@financial-ui-suite-dev
+claude plugin install financial-ui-suite@financial-ui-suite
 ```
+
+**Codex:** the repo ships `.codex-plugin/plugin.json`. Add it as a repo or local marketplace in Codex. The same `skills/` folder loads.
 
 Once installed, the skills auto-load when Claude detects financial UI work — anything with prices, P&L, order books, tickers, holdings, charts, or streaming market data.
 
@@ -143,8 +144,6 @@ Two layers:
 ./scripts/verify-financial-ui.sh ../my-app/src
 ```
 
-The skills themselves were built using TDD-for-documentation (see `superpowers:writing-skills`): tested against a baseline subagent rendering without the skill and verified against a subagent rendering with the skill loaded. Verified-distinct output across styles.
-
 ## Style previews
 
 Three of the newer styles shipped with full 1200×630 mockups (HTML source + rendered PNG in [`examples/og-images/`](./examples/og-images)). Each is rendered with placeholder branding to keep the focus on the **style**, not the source product.
@@ -167,7 +166,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for version history.
 
 ## Trademark notice
 
-Brand and product names referenced throughout this project (Bloomberg, TradingView, Kraken, Coinbase, Binance, Robinhood, Public, Financial Times, Wise, Revolut, Cash App, Massive, Stripe, Vercel, Linear, TastyTrade, Uniswap, Apple, Yahoo, AlphaSense, and others) are used for illustrative, descriptive, and educational purposes only — to ground each style in a concrete reference. This project is not affiliated with, endorsed by, sponsored by, or in any way officially connected to any of those companies. All trademarks, service marks, and trade names are the property of their respective owners.
+Brand and product names referenced throughout this project (Bloomberg, TradingView, Kraken, Coinbase, Binance, Robinhood, Public, Financial Times, Wise, Revolut, Cash App, Massive, Stripe, Vercel, Linear, TastyTrade, Uniswap, Apple, Yahoo, AlphaSense, and others) are used for illustrative, descriptive, and educational purposes only — to ground each style in a concrete reference. This is a personal project by Rob Gourley. It is not affiliated with, endorsed by, sponsored by, or in any way officially connected to any of those companies. All trademarks, service marks, and trade names are the property of their respective owners.
 
 ## License
 
