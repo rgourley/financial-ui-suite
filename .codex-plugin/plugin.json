@@ -9,7 +9,13 @@
   "homepage": "https://github.com/rgourley/financial-ui-suite",
   "repository": "https://github.com/rgourley/financial-ui-suite",
   "license": "MIT",
-  "keywords": ["financial-ui", "trading", "fintech", "design-system", "charts"],
+  "keywords": [
+    "financial-ui",
+    "trading",
+    "fintech",
+    "design-system",
+    "charts"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Financial UI Suite",
@@ -18,6 +24,10 @@
     "developerName": "Rob Gourley",
     "category": "Coding",
     "websiteURL": "https://github.com/rgourley/financial-ui-suite",
-    "defaultPrompt": ["Build a portfolio holdings table with the financial UI patterns skill."]
+    "defaultPrompt": [
+      "Build a portfolio holdings table with the financial UI patterns skill."
+    ],
+    "logo": "./.claude-plugin/icon.png",
+    "composerIcon": "./.claude-plugin/icon.png"
   }
 }
