@@ -1,0 +1,23 @@
+{
+  "name": "financial-ui-suite",
+  "version": "0.4.0",
+  "description": "Financial UI design skills: correctness patterns plus 14 visual styles for trading, portfolio, and market data interfaces.",
+  "author": {
+    "name": "Rob Gourley",
+    "email": "rgourley@gmail.com"
+  },
+  "homepage": "https://github.com/rgourley/financial-ui-suite",
+  "repository": "https://github.com/rgourley/financial-ui-suite",
+  "license": "MIT",
+  "keywords": ["financial-ui", "trading", "fintech", "design-system", "charts"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Financial UI Suite",
+    "shortDescription": "Patterns and 14 visual styles for financial UIs",
+    "longDescription": "Two skill layers for building financial products. financial-ui-patterns covers correctness: tabular numbers, semantic tokens, tick flash, streaming state, accessibility, charts, order entry. financial-ui-styles picks one of 14 visual systems, from a Bloomberg-style terminal to Robinhood-style retail.",
+    "developerName": "Rob Gourley",
+    "category": "Coding",
+    "websiteURL": "https://github.com/rgourley/financial-ui-suite",
+    "defaultPrompt": ["Build a portfolio holdings table with the financial UI patterns skill."]
+  }
+}
